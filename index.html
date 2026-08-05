@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Patidar Lucky Seat</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#fff8ef,#eef7ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+    text-align:center;
+}
+
+.brand{
+    font-size:18px;
+    font-weight:700;
+    color:#123b66;
+    margin-bottom:12px;
+}
+
+h1{
+    margin:5px 0;
+    color:#123b66;
+    font-size:30px;
+}
+
+.subtitle{
+    color:#555;
+    font-size:16px;
+    line-height:1.5;
+    margin-bottom:25px;
+}
+
+.scratch-wrapper{
+    position:relative;
+    width:100%;
+    height:260px;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.16);
+    background:white;
+}
+
+.result{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    background:white;
+}
+
+.gift{
+    font-size:55px;
+}
+
+.result h2{
+    color:#ff6b00;
+    margin:10px 0;
+}
+
+.result p{
+    color:#333;
+    margin:5px;
+    font-size:16px;
+}
+
+canvas{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    touch-action:none;
+    cursor:pointer;
+}
+
+.instruction{
+    margin-top:20px;
+    font-weight:700;
+    color:#123b66;
+    font-size:17px;
+}
+
+.small{
+    margin-top:8px;
+    color:#777;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="brand">🚌 PATIDAR TOURS & TRAVELS</div>
+
+    <h1>🍀 Lucky Seat</h1>
+
+    <div class="subtitle">
+        Aaj kismat aapke saath hai?<br>
+        Scratch karke dekhiye! 🎁
+    </div>
+
+    <div class="scratch-wrapper">
+
+        <div class="result">
+            <div class="gift">🎁</div>
+            <h2>YOUR RESULT</h2>
+            <p>Lucky Seat result will appear here.</p>
+            <p>🚌 Have a pleasant journey!</p>
+        </div>
+
+        <canvas id="scratchCanvas"></canvas>
+
+    </div>
+
+    <div class="instruction">
+        👆 Scratch Here
+    </div>
+
+    <div class="small">
+        Use your finger to scratch the card
+    </div>
+
+</div>
+
+<script>
+
+const canvas = document.getElementById("scratchCanvas");
+const wrapper = document.querySelector(".scratch-wrapper");
+
+const ctx = canvas.getContext("2d");
+
+function setupCanvas(){
+
+    const rect = wrapper.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+
+    canvas.style.width = rect.width + "px";
+    canvas.style.height = rect.height + "px";
+
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+
+    const gradient = ctx.createLinearGradient(0,0,rect.width,rect.height);
+
+    gradient.addColorStop(0,"#0d4f8b");
+    gradient.addColorStop(.5,"#1677bd");
+    gradient.addColorStop(1,"#ff7a00");
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0,0,rect.width,rect.height);
+
+    ctx.fillStyle = "#ffffff";
+    ctx.textAlign = "center";
+
+    ctx.font = "bold 27px Arial";
+    ctx.fillText("🎁 SCRATCH HERE",rect.width/2,rect.height/2-5);
+
+    ctx.font = "16px Arial";
+    ctx.fillText("Reveal Your Luck",rect.width/2,rect.height/2+30);
+}
+
+setupCanvas();
+
+let scratching = false;
+
+function scratch(x,y){
+
+    const rect = canvas.getBoundingClientRect();
+
+    ctx.globalCompositeOperation = "destination-out";
+
+    ctx.beginPath();
+
+    ctx.arc(
+        x - rect.left,
+        y - rect.top,
+        25,
+        0,
+        Math.PI*2
+    );
+
+    ctx.fill();
+}
+
+canvas.addEventListener("pointerdown",function(e){
+
+    scratching = true;
+
+    canvas.setPointerCapture(e.pointerId);
+
+    scratch(e.clientX,e.clientY);
+});
+
+canvas.addEventListener("pointermove",function(e){
+
+    if(!scratching) return;
+
+    scratch(e.clientX,e.clientY);
+});
+
+canvas.addEventListener("pointerup",function(){
+    scratching = false;
+});
+
+canvas.addEventListener("pointercancel",function(){
+    scratching = false;
+});
+
+</script>
+
+</body>
+</html>
