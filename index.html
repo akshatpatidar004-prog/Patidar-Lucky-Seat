@@ -15,46 +15,95 @@ body{
     margin:0;
     min-height:100vh;
     font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#fff8ef,#eef7ff);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+    background:linear-gradient(135deg,#fffaf3,#eef7ff);
+    color:#123f6b;
 }
 
 .container{
     width:100%;
-    max-width:430px;
+    max-width:520px;
+    margin:auto;
+    padding:25px 18px 40px;
     text-align:center;
 }
 
 .brand{
-    font-size:18px;
-    font-weight:700;
-    color:#123b66;
-    margin-bottom:12px;
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:20px;
 }
 
 h1{
-    margin:5px 0;
-    color:#123b66;
-    font-size:30px;
+    margin:0;
+    font-size:36px;
 }
 
 .subtitle{
     color:#555;
-    font-size:16px;
+    font-size:17px;
     line-height:1.5;
+    margin:10px 0 25px;
+}
+
+
+/* SEAT SELECTION */
+
+.seat-box{
+    background:white;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
     margin-bottom:25px;
+}
+
+.seat-box h2{
+    margin-top:0;
+    font-size:21px;
+}
+
+select{
+    width:100%;
+    padding:14px;
+    font-size:18px;
+    border:2px solid #1565a8;
+    border-radius:10px;
+    background:white;
+    margin-top:5px;
+}
+
+.continue-btn{
+    width:100%;
+    border:0;
+    border-radius:10px;
+    padding:14px;
+    margin-top:15px;
+    font-size:17px;
+    font-weight:bold;
+    color:white;
+    background:#f57c00;
+    cursor:pointer;
+}
+
+
+/* SCRATCH AREA */
+
+#gameArea{
+    display:none;
+}
+
+.selected-seat{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
 }
 
 .scratch-wrapper{
     position:relative;
     width:100%;
-    height:260px;
+    height:300px;
     border-radius:22px;
     overflow:hidden;
-    box-shadow:0 12px 30px rgba(0,0,0,.16);
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
     background:white;
 }
 
@@ -69,167 +118,415 @@ h1{
     background:white;
 }
 
-.gift{
+.result-icon{
     font-size:55px;
+    margin-bottom:5px;
 }
 
 .result h2{
-    color:#ff6b00;
-    margin:10px 0;
+    margin:5px 0 10px;
+    font-size:27px;
 }
 
 .result p{
-    color:#333;
-    margin:5px;
-    font-size:16px;
+    margin:5px 0;
+    font-size:17px;
+    line-height:1.45;
 }
+
+.winner{
+    color:#ef6c00;
+}
+
+.loser{
+    color:#1565a8;
+}
+
+.discount{
+    font-size:32px !important;
+    font-weight:900;
+    color:#ef6c00;
+}
+
+.verify{
+    margin-top:13px !important;
+    font-size:13px !important;
+    color:#666;
+}
+
+
+/* CANVAS */
 
 canvas{
     position:absolute;
-    top:0;
-    left:0;
+    inset:0;
     width:100%;
     height:100%;
-    touch-action:none;
     cursor:pointer;
+    touch-action:none;
 }
 
-.instruction{
+.scratch-text{
     margin-top:20px;
-    font-weight:700;
-    color:#123b66;
-    font-size:17px;
+    font-size:21px;
+    font-weight:bold;
 }
 
 .small{
-    margin-top:8px;
-    color:#777;
-    font-size:13px;
+    color:#666;
+    font-size:14px;
+    margin-top:7px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .container{
+        padding-top:20px;
+    }
+
+    h1{
+        font-size:31px;
+    }
+
+    .scratch-wrapper{
+        height:280px;
+    }
 }
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-    <div class="brand">🚌 PATIDAR TOURS & TRAVELS</div>
+    <div class="brand">
+        🚌 PATIDAR TOURS & TRAVELS
+    </div>
 
     <h1>🍀 Lucky Seat</h1>
 
     <div class="subtitle">
         Aaj kismat aapke saath hai?<br>
-        Scratch karke dekhiye! 🎁
+        Apni seat select karke scratch kijiye! 🎁
     </div>
 
-    <div class="scratch-wrapper">
 
-        <div class="result">
-            <div class="gift">🎁</div>
-            <h2>YOUR RESULT</h2>
-            <p>Lucky Seat result will appear here.</p>
-            <p>🚌 Have a pleasant journey!</p>
+    <!-- SEAT SELECTION -->
+
+    <div class="seat-box" id="seatBox">
+
+        <h2>🎫 Select Your Seat Number</h2>
+
+        <select id="seatSelect">
+            <option value="">-- Choose Your Seat --</option>
+        </select>
+
+        <button class="continue-btn" onclick="startGame()">
+            Continue to Lucky Scratch 🎁
+        </button>
+
+    </div>
+
+
+    <!-- SCRATCH GAME -->
+
+    <div id="gameArea">
+
+        <div class="selected-seat">
+            🎫 Your Seat: <span id="displaySeat"></span>
         </div>
 
-        <canvas id="scratchCanvas"></canvas>
+        <div class="scratch-wrapper">
 
-    </div>
+            <div class="result" id="result"></div>
 
-    <div class="instruction">
-        👆 Scratch Here
-    </div>
+            <canvas id="scratchCanvas"></canvas>
 
-    <div class="small">
-        Use your finger to scratch the card
+        </div>
+
+        <div class="scratch-text">
+            👆 Scratch Here
+        </div>
+
+        <div class="small">
+            Use your finger to scratch the card
+        </div>
+
     </div>
 
 </div>
 
+
 <script>
 
-const canvas = document.getElementById("scratchCanvas");
-const wrapper = document.querySelector(".scratch-wrapper");
+/* ==================================================
+   🔐 DAILY LUCKY SEATS
 
-const ctx = canvas.getContext("2d");
+   DAILY SIRF YE 2 NUMBERS CHANGE KARNE HAIN.
 
-function setupCanvas(){
+   Example:
+   const luckySeats = [12, 28];
+
+================================================== */
+
+const luckySeats = [3, 7];
+
+
+/* CREATE SEATS 1 TO 45 */
+
+const seatSelect = document.getElementById("seatSelect");
+
+for(let i = 1; i <= 45; i++){
+
+    const option = document.createElement("option");
+
+    option.value = i;
+    option.textContent = "Seat " + i;
+
+    seatSelect.appendChild(option);
+}
+
+
+/* START GAME */
+
+function startGame(){
+
+    const seat = parseInt(seatSelect.value);
+
+    if(!seat){
+
+        alert("Please select your actual seat number.");
+
+        return;
+    }
+
+    document.getElementById("seatBox").style.display = "none";
+
+    document.getElementById("gameArea").style.display = "block";
+
+    document.getElementById("displaySeat").textContent = seat;
+
+    createResult(seat);
+
+    setupScratch();
+}
+
+
+/* CREATE RESULT */
+
+function createResult(seat){
+
+    const result = document.getElementById("result");
+
+    if(luckySeats.includes(seat)){
+
+        result.innerHTML = `
+
+        <div class="result-icon">🎉</div>
+
+        <h2 class="winner">
+            CONGRATULATIONS!
+        </h2>
+
+        <p>
+            Your seat is today's
+            <strong>Lucky Seat!</strong>
+        </p>
+
+        <p class="discount">
+            🎁 50% OFF
+        </p>
+
+        <p>
+            Enjoy your lucky journey with<br>
+            Patidar Tours & Travels 🚌
+        </p>
+
+        <p class="verify">
+            *Offer valid only for the selected seat number.
+            Please show this screen and your ticket to the conductor.
+        </p>
+
+        `;
+
+    }else{
+
+        result.innerHTML = `
+
+        <div class="result-icon">🍀</div>
+
+        <h2 class="loser">
+            BETTER LUCK NEXT TIME!
+        </h2>
+
+        <p>
+            Aaj kismat thodi aur door hai 😊
+        </p>
+
+        <p>
+            Keep travelling with<br>
+            <strong>Patidar Tours & Travels</strong>
+        </p>
+
+        <p>
+            🚌 Have a Safe & Pleasant Journey!
+        </p>
+
+        `;
+    }
+}
+
+
+/* SCRATCH CARD */
+
+function setupScratch(){
+
+    const canvas = document.getElementById("scratchCanvas");
+
+    const wrapper = canvas.parentElement;
 
     const rect = wrapper.getBoundingClientRect();
+
     const dpr = window.devicePixelRatio || 1;
 
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
 
-    canvas.style.width = rect.width + "px";
-    canvas.style.height = rect.height + "px";
+    const ctx = canvas.getContext("2d");
 
-    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.scale(dpr,dpr);
 
-    const gradient = ctx.createLinearGradient(0,0,rect.width,rect.height);
 
-    gradient.addColorStop(0,"#0d4f8b");
-    gradient.addColorStop(.5,"#1677bd");
-    gradient.addColorStop(1,"#ff7a00");
+    /* Scratch Cover */
 
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0,0,rect.width,rect.height);
-
-    ctx.fillStyle = "#ffffff";
-    ctx.textAlign = "center";
-
-    ctx.font = "bold 27px Arial";
-    ctx.fillText("🎁 SCRATCH HERE",rect.width/2,rect.height/2-5);
-
-    ctx.font = "16px Arial";
-    ctx.fillText("Reveal Your Luck",rect.width/2,rect.height/2+30);
-}
-
-setupCanvas();
-
-let scratching = false;
-
-function scratch(x,y){
-
-    const rect = canvas.getBoundingClientRect();
-
-    ctx.globalCompositeOperation = "destination-out";
-
-    ctx.beginPath();
-
-    ctx.arc(
-        x - rect.left,
-        y - rect.top,
-        25,
+    const gradient = ctx.createLinearGradient(
         0,
-        Math.PI*2
+        0,
+        rect.width,
+        rect.height
     );
 
-    ctx.fill();
+    gradient.addColorStop(0,"#07599a");
+    gradient.addColorStop(.55,"#1679ba");
+    gradient.addColorStop(1,"#f57c00");
+
+    ctx.fillStyle = gradient;
+
+    ctx.fillRect(
+        0,
+        0,
+        rect.width,
+        rect.height
+    );
+
+
+    /* Cover Text */
+
+    ctx.fillStyle = "white";
+
+    ctx.textAlign = "center";
+
+    ctx.font = "bold 28px Arial";
+
+    ctx.fillText(
+        "🎁 SCRATCH HERE",
+        rect.width / 2,
+        rect.height / 2
+    );
+
+    ctx.font = "16px Arial";
+
+    ctx.fillText(
+        "Reveal Your Luck",
+        rect.width / 2,
+        rect.height / 2 + 35
+    );
+
+
+    let scratching = false;
+
+
+    function scratch(x,y){
+
+        ctx.globalCompositeOperation = "destination-out";
+
+        ctx.beginPath();
+
+        ctx.arc(
+            x,
+            y,
+            28,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+    }
+
+
+    function position(e){
+
+        const r = canvas.getBoundingClientRect();
+
+        const point = e.touches ? e.touches[0] : e;
+
+        return {
+            x:point.clientX-r.left,
+            y:point.clientY-r.top
+        };
+    }
+
+
+    canvas.addEventListener("mousedown",()=>scratching=true);
+
+    canvas.addEventListener("mouseup",()=>scratching=false);
+
+    canvas.addEventListener("mouseleave",()=>scratching=false);
+
+
+    canvas.addEventListener("mousemove",(e)=>{
+
+        if(!scratching) return;
+
+        const p=position(e);
+
+        scratch(p.x,p.y);
+    });
+
+
+    canvas.addEventListener("touchstart",(e)=>{
+
+        e.preventDefault();
+
+        scratching=true;
+
+        const p=position(e);
+
+        scratch(p.x,p.y);
+
+    },{passive:false});
+
+
+    canvas.addEventListener("touchmove",(e)=>{
+
+        e.preventDefault();
+
+        if(!scratching) return;
+
+        const p=position(e);
+
+        scratch(p.x,p.y);
+
+    },{passive:false});
+
+
+    canvas.addEventListener("touchend",()=>scratching=false);
+
 }
-
-canvas.addEventListener("pointerdown",function(e){
-
-    scratching = true;
-
-    canvas.setPointerCapture(e.pointerId);
-
-    scratch(e.clientX,e.clientY);
-});
-
-canvas.addEventListener("pointermove",function(e){
-
-    if(!scratching) return;
-
-    scratch(e.clientX,e.clientY);
-});
-
-canvas.addEventListener("pointerup",function(){
-    scratching = false;
-});
-
-canvas.addEventListener("pointercancel",function(){
-    scratching = false;
-});
 
 </script>
 
