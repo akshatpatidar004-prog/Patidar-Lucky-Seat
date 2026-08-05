@@ -224,10 +224,34 @@ canvas{
         <select id="seatSelect">
             <option value="">-- Choose Your Seat --</option>
         </select>
+<div style="margin-top:18px; text-align:left;">
 
-        <button class="continue-btn" onclick="startGame()">
-            Continue to Lucky Scratch 🎁
-        </button>
+    <label for="passengerName"><b>👤 Passenger Name</b></label>
+    <input
+        type="text"
+        id="passengerName"
+        placeholder="Enter your name"
+        required
+        style="width:100%; padding:14px; margin-top:6px; margin-bottom:15px;
+        font-size:16px; border:2px solid #1565a8; border-radius:10px;"
+    >
+
+    <label for="mobileNumber"><b>📱 Mobile Number</b></label>
+    <input
+        type="tel"
+        id="mobileNumber"
+        placeholder="Enter 10 digit mobile number"
+        maxlength="10"
+        inputmode="numeric"
+        required
+        style="width:100%; padding:14px; margin-top:6px;
+        font-size:16px; border:2px solid #1565a8; border-radius:10px;"
+    >
+
+</div>
+        <button class="continue-btn" onclick="submitPassengerData()">
+    Get Your Scratch Card 🎁
+</button>
 
     </div>
 
@@ -290,7 +314,51 @@ for(let i = 1; i <= 45; i++){
     seatSelect.appendChild(option);
 }
 
+async function submitPassengerData() {
 
+    const seat = document.getElementById("seatSelect").value;
+    const name = document.getElementById("passengerName").value.trim();
+    const mobile = document.getElementById("mobileNumber").value.trim();
+
+    if (!seat) {
+        alert("Please select your actual seat number.");
+        return;
+    }
+
+    if (!name) {
+        alert("Please enter your name.");
+        return;
+    }
+
+    if (!/^[0-9]{10}$/.test(mobile)) {
+        alert("Please enter a valid 10 digit mobile number.");
+        return;
+    }
+
+    try {
+
+        await fetch(SHEET_WEB_APP_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain"
+            },
+            body: JSON.stringify({
+                name: name,
+                mobile: mobile,
+                seat: seat,
+                result: "Scratch Started"
+            })
+        });
+
+        startGame();
+
+    } catch (error) {
+
+        alert("Something went wrong. Please try again.");
+
+    }
+}
 /* START GAME */
 
 function startGame(){
@@ -377,7 +445,26 @@ function createResult(seat){
         </p>
 
         `;
-    }
+    }  
+
+    const passengerName = document.getElementById("passengerName").value.trim();
+const mobileNumber = document.getElementById("mobileNumber").value.trim();
+
+const resultStatus = luckySeats.includes(seat) ? "WIN - 50% OFF" : "LOSE";
+
+fetch(SHEET_WEB_APP_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name: passengerName,
+        mobile: mobileNumber,
+        seat: seat,
+        result: resultStatus
+    })
+});
 }
 
 
