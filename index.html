@@ -195,11 +195,125 @@ canvas{
         height:280px;
     }
 }
+    /* ===== PREMIUM ANIMATED BACKGROUND ===== */
+
+.premium-bg{
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container{
+    position: relative;
+    z-index: 2;
+}
+
+/* Floating Items */
+.float-item{
+    position: absolute;
+    opacity: 0.16;
+    font-size: 28px;
+    animation: premiumFloat 9s ease-in-out infinite;
+    filter: blur(0.2px);
+}
+
+.f1{ left:8%;  top:15%; animation-delay:0s; }
+.f2{ left:88%; top:22%; animation-delay:1s; }
+.f3{ left:18%; top:72%; animation-delay:2s; }
+.f4{ left:82%; top:68%; animation-delay:3s; }
+.f5{ left:48%; top:8%;  animation-delay:4s; }
+.f6{ left:65%; top:82%; animation-delay:5s; }
+.f7{ left:4%;  top:48%; animation-delay:6s; }
+
+@keyframes premiumFloat{
+    0%,100%{
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    50%{
+        transform: translateY(-30px) rotate(10deg) scale(1.12);
+    }
+}
+
+
+/* ===== MOVING BUS ===== */
+
+.bus-animation{
+    position: fixed;
+    bottom: 18px;
+    left: -100px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.22;
+    animation: busDrive 22s linear infinite;
+}
+
+.bus-animation span{
+    font-size: 38px;
+    display: block;
+    animation: busBounce 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes busDrive{
+    from{
+        transform: translateX(-100px);
+    }
+
+    to{
+        transform: translateX(calc(100vw + 200px));
+    }
+}
+
+@keyframes busBounce{
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(-3px);
+    }
+}
+
+
+/* Mobile Optimization */
+
+@media(max-width:600px){
+
+    .float-item{
+        font-size:22px;
+        opacity:0.12;
+    }
+
+    .bus-animation span{
+        font-size:30px;
+    }
+
+    .bus-animation{
+        animation-duration:18s;
+    }
+}
 </style>
 </head>
 
 
 <body>
+    <!-- PREMIUM FLOATING BACKGROUND -->
+<div class="premium-bg" aria-hidden="true">
+    <span class="float-item f1">✨</span>
+    <span class="float-item f2">🎟️</span>
+    <span class="float-item f3">✦</span>
+    <span class="float-item f4">🎁</span>
+    <span class="float-item f5">✨</span>
+    <span class="float-item f6">✦</span>
+    <span class="float-item f7">🎟️</span>
+</div>
+
+<!-- MOVING BUS -->
+<div class="bus-animation" aria-hidden="true">
+    <span>🚌</span>
+</div>
 
 <div class="container">
 
