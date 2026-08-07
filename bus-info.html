@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patidar Tours & Travels | Bus Information</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --navy:#082b57;
+  --blue:#0d4f91;
+  --orange:#f58220;
+  --light:#f5f8fc;
+  --text:#172033;
+  --muted:#667085;
+  --white:#ffffff;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 90% 5%,rgba(245,130,32,.14),transparent 24%),
+    radial-gradient(circle at 5% 20%,rgba(13,79,145,.10),transparent 26%),
+    #f5f8fc;
+  color:var(--text);
+  min-height:100vh;
+}
+
+.page{
+  width:100%;
+  max-width:720px;
+  margin:auto;
+  padding-bottom:35px;
+}
+
+/* ================= HEADER ================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:26px 20px 30px;
+  background:linear-gradient(135deg,#06254b 0%,#0b4c87 65%,#f58220 145%);
+  color:white;
+  border-radius:0 0 30px 30px;
+  box-shadow:0 12px 30px rgba(7,43,87,.18);
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  right:-70px;
+  top:-70px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);
+  right:25px;
+  bottom:-65px;
+}
+
+.brand{
+  position:relative;
+  z-index:2;
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:700;
+  opacity:.9;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  position:relative;
+  z-index:2;
+  font-size:27px;
+  line-height:1.15;
+  margin-bottom:8px;
+}
+
+.hero p{
+  position:relative;
+  z-index:2;
+  font-size:14px;
+  opacity:.84;
+}
+
+.live-pill{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:17px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.20);
+  padding:8px 12px;
+  border-radius:50px;
+  font-size:12px;
+  backdrop-filter:blur(6px);
+}
+
+.live-dot{
+  width:8px;
+  height:8px;
+  background:#4ade80;
+  border-radius:50%;
+  box-shadow:0 0 0 4px rgba(74,222,128,.15);
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+  padding:18px 15px;
+}
+
+.section-label{
+  color:var(--orange);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  margin:7px 4px 8px;
+}
+
+.card{
+  background:white;
+  border-radius:22px;
+  padding:19px;
+  margin-bottom:17px;
+  box-shadow:0 8px 25px rgba(15,42,72,.08);
+  border:1px solid rgba(10,62,112,.06);
+}
+
+/* ================= BUS INFO ================= */
+
+.bus-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding-bottom:15px;
+  border-bottom:1px solid #edf1f6;
+}
+
+.bus-number small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  margin-bottom:4px;
+}
+
+.bus-number strong{
+  color:var(--navy);
+  font-size:22px;
+}
+
+.service-badge{
+  background:#fff3e8;
+  color:#d96500;
+  font-size:11px;
+  font-weight:700;
+  padding:7px 10px;
+  border-radius:50px;
+}
+
+.route-box{
+  margin-top:17px;
+  background:linear-gradient(135deg,#f1f6fc,#fff8f1);
+  border-radius:16px;
+  padding:15px;
+}
+
+.route-title{
+  font-size:11px;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+.route-main{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:7px;
+  color:var(--navy);
+  font-weight:800;
+  font-size:15px;
+}
+
+.route-arrow{
+  flex:1;
+  height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--orange));
+  position:relative;
+  min-width:30px;
+}
+
+.route-arrow:after{
+  content:"›";
+  position:absolute;
+  right:-2px;
+  top:-10px;
+  color:var(--orange);
+  font-size:20px;
+}
+
+.via{
+  margin-top:9px;
+  font-size:11px;
+  color:var(--muted);
+}
+
+/* ================= STAFF ================= */
+
+.staff-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+  margin-top:16px;
+}
+
+.info-box{
+  background:#f8fafc;
+  border-radius:14px;
+  padding:13px;
+  border:1px solid #edf1f5;
+}
+
+.info-box span{
+  display:block;
+  font-size:10px;
+  color:var(--muted);
+  margin-bottom:5px;
+}
+
+.info-box strong{
+  display:block;
+  font-size:13px;
+  color:var(--navy);
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+/* ================= BUTTONS ================= */
+
+.actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:15px;
+}
+
+.btn{
+  text-decoration:none;
+  border-radius:13px;
+  padding:12px 8px;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+}
+
+.call{
+  color:white;
+  background:linear-gradient(135deg,#0b3769,#0d5799);
+}
+
+.help{
+  color:#c85d00;
+  background:#fff1e5;
+  border:1px solid #ffd7b3;
+}
+
+/* ================= ROUTE TIMINGS ================= */
+
+.heading-row{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  margin-bottom:17px;
+}
+
+.heading-icon{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#0b3769,#0d5799);
+  color:white;
+  font-size:20px;
+}
+
+.heading-row h2{
+  font-size:19px;
+  color:var(--navy);
+}
+
+.heading-row p{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+/* ================= TABS ================= */
+
+.tabs{
+  display:flex;
+  background:#f1f4f8;
+  padding:4px;
+  border-radius:13px;
+  margin-bottom:20px;
+}
+
+.tab{
+  width:50%;
+  border:0;
+  padding:10px 5px;
+  border-radius:10px;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+  background:transparent;
+  color:#687386;
+}
+
+.tab.active{
+  background:white;
+  color:var(--navy);
+  box-shadow:0 3px 10px rgba(15,42,72,.09);
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+  position:relative;
+  padding-left:11px;
+}
+
+.stop{
+  display:grid;
+  grid-template-columns:28px 1fr auto;
+  align-items:start;
+  position:relative;
+  min-height:61px;
+}
+
+.stop:not(:last-child):before{
+  content:"";
+  position:absolute;
+  left:7px;
+  top:16px;
+  height:calc(100% - 2px);
+  width:2px;
+  background:#dce5ef;
+}
+
+.dot{
+  width:16px;
+  height:16px;
+  border:4px solid #d8e5f3;
+  background:var(--blue);
+  border-radius:50%;
+  position:relative;
+  z-index:2;
+}
+
+.stop:first-child .dot,
+.stop:last-child .dot{
+  background:var(--orange);
+  border-color:#ffe0c4;
+}
+
+.stop-name{
+  padding-right:8px;
+}
+
+.stop-name strong{
+  display:block;
+  color:#172033;
+  font-size:14px;
+}
+
+.stop-name small{
+  color:#8992a2;
+  font-size:10px;
+}
+
+.time{
+  color:var(--navy);
+  background:#f4f7fb;
+  border-radius:8px;
+  padding:5px 8px;
+  font-size:11px;
+  font-weight:800;
+}
+
+/* ================= FOOTER ================= */
+
+.note{
+  background:linear-gradient(135deg,#fff7ef,#fff);
+  border-left:4px solid var(--orange);
+  padding:13px;
+  border-radius:10px;
+  color:#626b79;
+  font-size:11px;
+  line-height:1.5;
+  margin-top:6px;
+}
+
+.footer{
+  text-align:center;
+  padding:13px 15px 5px;
+  color:#7c8797;
+  font-size:10px;
+}
+
+.footer strong{
+  color:var(--navy);
+}
+
+.route-panel{
+  display:none;
+}
+
+.route-panel.active{
+  display:block;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:420px){
+  .hero{
+    padding:23px 17px 27px;
+    border-radius:0 0 25px 25px;
+  }
+
+  .hero h1{
+    font-size:24px;
+  }
+
+  .content{
+    padding:15px 11px;
+  }
+
+  .card{
+    padding:16px;
+    border-radius:19px;
+  }
+
+  .route-main{
+    font-size:13px;
+  }
+
+  .staff-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <header class="hero">
+    <div class="brand">PATIDAR TOURS &amp; TRAVELS</div>
+
+    <h1>Your Journey,<br>Our Responsibility.</h1>
+
+    <p>Reliable service • Comfortable journey • On-time travel</p>
+
+    <div class="live-pill">
+      <span class="live-dot"></span>
+      Bus Information
+    </div>
+  </header>
+
+
+  <main class="content">
+
+    <div class="section-label">TODAY'S BUS INFORMATION</div>
+
+    <section class="card">
+
+      <div class="bus-top">
+        <div class="bus-number">
+          <small>BUS NUMBER</small>
+          <strong>MP 13 ____</strong>
+        </div>
+
+        <div class="service-badge">● In Service</div>
+      </div>
+
+
+      <div class="route-box">
+        <div class="route-title">TODAY'S ROUTE</div>
+
+        <div class="route-main">
+          <span>INDORE</span>
+          <span class="route-arrow"></span>
+          <span>KHARGONE</span>
+        </div>
+
+        <div class="via">
+          Via Dhamnod • Khalghat • Kasrawad
+        </div>
+      </div>
+
+
+      <div class="staff-grid">
+
+        <div class="info-box">
+          <span>TODAY'S DRIVER</span>
+          <strong>Driver Name</strong>
+        </div>
+
+        <div class="info-box">
+          <span>DRIVER CONTACT</span>
+          <strong>+91 XXXXX XXXXX</strong>
+        </div>
+
+        <div class="info-box">
+          <span>CLEANER</span>
+          <strong>Cleaner Name</strong>
+        </div>
+
+        <div class="info-box">
+          <span>CLEANER CONTACT</span>
+          <strong>+91 XXXXX XXXXX</strong>
+        </div>
+
+        <div class="info-box full">
+          <span>PASSENGER HELPLINE</span>
+          <strong>+91 XXXXX XXXXX</strong>
+        </div>
+
+      </div>
+
+
+      <div class="actions">
+        <a class="btn call" href="tel:+91XXXXXXXXXX">
+          ☎ Call Driver
+        </a>
+
+        <a class="btn help" href="tel:+91XXXXXXXXXX">
+          ☎ Helpline
+        </a>
+      </div>
+
+    </section>
+
+
+    <div class="section-label">ROUTE &amp; TIMINGS</div>
+
+    <section class="card">
+
+      <div class="heading-row">
+
+        <div class="heading-icon">↗</div>
+
+        <div>
+          <h2>Route Timings</h2>
+          <p>Select your travel direction</p>
+        </div>
+
+      </div>
+
+
+      <div class="tabs">
+
+        <button class="tab active"
+        onclick="showRoute('indore',this)">
+          Indore → Khargone
+        </button>
+
+        <button class="tab"
+        onclick="showRoute('khargone',this)">
+          Khargone → Indore
+        </button>
+
+      </div>
+
+
+      <!-- INDORE TO KHARGONE -->
+
+      <div id="indore" class="route-panel active">
+
+        <div class="timeline">
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Indore</strong>
+              <small>Sarvate Bus Stand</small>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Musakhedi</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Choithram</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Rau</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Manpur</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Gujri</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Khalghat</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Kasrawad</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Ozhra</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Khargone</strong>
+              <small>Bus Stand</small>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- KHARGONE TO INDORE -->
+
+      <div id="khargone" class="route-panel">
+
+        <div class="timeline">
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Khargone</strong>
+              <small>Bus Stand</small>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Ozhra</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Kasrawad</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Khalghat</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Gujri</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Manpur</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Rau</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Choithram</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Musakhedi</strong>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+          <div class="stop">
+            <div class="dot"></div>
+            <div class="stop-name">
+              <strong>Indore</strong>
+              <small>Sarvate Bus Stand</small>
+            </div>
+            <div class="time">--:--</div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="note">
+        <strong>Travel Note:</strong>
+        Timings may vary slightly depending on traffic and road conditions.
+        Please reach your boarding point a few minutes before the scheduled time.
+      </div>
+
+    </section>
+
+
+    <div class="footer">
+      <strong>Patidar Tours &amp; Travels</strong><br><br>
+      Safe Journey • Happy Journey
+    </div>
+
+  </main>
+
+</div>
+
+
+<script>
+function showRoute(route,button){
+
+  document.querySelectorAll('.route-panel')
+  .forEach(function(panel){
+    panel.classList.remove('active');
+  });
+
+  document.querySelectorAll('.tab')
+  .forEach(function(tab){
+    tab.classList.remove('active');
+  });
+
+  document.getElementById(route)
+  .classList.add('active');
+
+  button.classList.add('active');
+}
+</script>
+
+</body>
+</html>
