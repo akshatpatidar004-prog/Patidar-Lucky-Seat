@@ -294,21 +294,155 @@ canvas{
         animation-duration:18s;
     }
 }
+/* ===== PREMIUM HERO SECTION ===== */
+
+.hero-section{
+    position:relative;
+    width:100%;
+    min-height:260px;
+    margin-bottom:25px;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(5,35,85,0.96),
+            rgba(10,70,135,0.88),
+            rgba(255,120,0,0.72)
+        );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 12px 35px rgba(0,40,100,0.22);
+}
+
+.hero-section::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    top:-260px;
+    right:-80px;
+}
+
+.hero-section::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(255,140,0,0.18);
+    bottom:-220px;
+    left:-60px;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(255,165,50,0.25),
+            transparent 35%
+        );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:white;
+    padding:40px 20px;
+}
+
+.hero-route{
+    display:inline-block;
+    padding:9px 20px;
+    margin-bottom:18px;
+
+    background:rgba(255,255,255,0.13);
+    border:1px solid rgba(255,255,255,0.30);
+    border-radius:50px;
+
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+
+    backdrop-filter:blur(8px);
+}
+
+.hero-content h2{
+    margin:0;
+    font-size:38px;
+    font-weight:800;
+    letter-spacing:-1px;
+    text-shadow:0 4px 15px rgba(0,0,0,0.18);
+}
+
+.hero-content p{
+    margin:13px 0 0;
+    font-size:16px;
+    font-weight:500;
+    letter-spacing:.5px;
+    opacity:.92;
+}
+
+@media(max-width:600px){
+
+    .hero-section{
+        min-height:220px;
+    }
+
+    .hero-content{
+        padding:32px 15px;
+    }
+
+    .hero-content h2{
+        font-size:29px;
+    }
+
+    .hero-route{
+        font-size:11px;
+        padding:8px 14px;
+    }
+
+    .hero-content p{
+        font-size:14px;
+    }
+}
 </style>
 </head>
-
-
 <body>
-    <!-- PREMIUM FLOATING BACKGROUND -->
-<div class="premium-bg" aria-hidden="true">
-    <span class="float-item f1">✨</span>
-    <span class="float-item f2">🎟️</span>
-    <span class="float-item f3">✦</span>
-    <span class="float-item f4">🎁</span>
-    <span class="float-item f5">✨</span>
-    <span class="float-item f6">✦</span>
-    <span class="float-item f7">🎟️</span>
-</div>
+
+<!-- PREMIUM HERO SECTION -->
+<section class="hero-section">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <div class="hero-route">
+            INDORE → DHAMNOD → KHARGONE
+        </div>
+
+        <h2>Your Journey, Our Promise</h2>
+
+        <p>Safe • Comfortable • On Time</p>
+
+    </div>
+
+</section>
+<!-- PREMIUM HERO SECTION END -->
+<div class="container">
+
+    <div class="brand">
+        🚌 PATIDAR TOURS & TRAVELS
+    </div>
+
+    <h1>🍀 Lucky Seat</h1>
 
 <!-- MOVING BUS -->
 <div class="bus-animation" aria-hidden="true">
