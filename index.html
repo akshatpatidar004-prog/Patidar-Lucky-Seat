@@ -414,6 +414,48 @@ canvas{
         font-size:14px;
     }
 }
+    /* ===== HERO BUS IMAGE ===== */
+
+.hero-bus-wrap{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:22px;
+    position:relative;
+    z-index:3;
+}
+
+.hero-bus{
+    width:min(620px, 92vw);
+    height:auto;
+    display:block;
+    object-fit:contain;
+
+    filter:drop-shadow(0 18px 18px rgba(0,0,0,0.28));
+
+    animation:heroBusFloat 4s ease-in-out infinite;
+}
+
+@keyframes heroBusFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+@media(max-width:600px){
+
+    .hero-bus-wrap{
+        margin-top:16px;
+    }
+
+    .hero-bus{
+        width:96%;
+    }
+}
 </style>
 </head>
 <body>
@@ -431,7 +473,9 @@ canvas{
         <h2>Your Journey, Our Promise</h2>
 
         <p>Safe • Comfortable • On Time</p>
-
+<div class="hero-bus-wrap">
+    <img src="Patidar - Bus.png" alt="Patidar Tours and Travels Bus" class="hero-bus">
+</div>
     </div>
 
 </section>
