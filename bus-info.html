@@ -3,822 +3,1897 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Patidar Tours & Travels | Bus Information</title>
+<meta name="theme-color" content="#fff8ed">
+
+<title>Patidar Travels | Bus Information</title>
 
 <style>
+
+/* =========================================
+   PATIDAR TRAVELS - PREMIUM BUS INFORMATION
+   ========================================= */
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 :root{
-  --navy:#082b57;
-  --blue:#0d4f91;
-  --orange:#f58220;
-  --light:#f5f8fc;
-  --text:#172033;
-  --muted:#667085;
-  --white:#ffffff;
+    --navy:#082f5b;
+    --navy-dark:#052342;
+    --blue:#0b4d86;
+    --orange:#f58220;
+    --orange-dark:#dc6811;
+    --cream:#fff8ed;
+    --cream-dark:#f8ead6;
+    --white:#ffffff;
+    --text:#17283c;
+    --muted:#718096;
+    --line:#eadfce;
+    --green:#1fa76a;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(circle at 90% 5%,rgba(245,130,32,.14),transparent 24%),
-    radial-gradient(circle at 5% 20%,rgba(13,79,145,.10),transparent 26%),
-    #f5f8fc;
-  color:var(--text);
-  min-height:100vh;
+    font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Arial, sans-serif;
+    background:
+        radial-gradient(circle at 90% 2%,
+        rgba(245,130,32,.13),transparent 23%),
+
+        radial-gradient(circle at 5% 20%,
+        rgba(8,47,91,.07),transparent 25%),
+
+        var(--cream);
+
+    color:var(--text);
+    min-height:100vh;
+}
+
+button,
+a{
+    -webkit-tap-highlight-color:transparent;
 }
 
 .page{
-  width:100%;
-  max-width:720px;
-  margin:auto;
-  padding-bottom:35px;
+    width:100%;
+    max-width:760px;
+    margin:0 auto;
+    overflow:hidden;
 }
 
-/* ================= HEADER ================= */
+
+/* =========================================
+   TOP BRAND AREA
+   ========================================= */
+
+.top-area{
+    position:relative;
+    padding:22px 18px 0;
+    overflow:hidden;
+}
+
+.top-area::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border:1px solid rgba(245,130,32,.10);
+    border-radius:50%;
+    right:-120px;
+    top:-100px;
+}
+
+.top-area::after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:rgba(8,47,91,.035);
+    left:-85px;
+    top:70px;
+}
+
+.brand-header{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:4px 2px 18px;
+}
+
+.logo-wrap{
+    display:flex;
+    align-items:center;
+    min-width:0;
+}
+
+.company-logo{
+    width:205px;
+    max-width:62vw;
+    height:auto;
+    display:block;
+    object-fit:contain;
+}
+
+.service-status{
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    padding:8px 11px;
+
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(8,47,91,.08);
+    border-radius:50px;
+
+    color:var(--navy);
+    font-size:10px;
+    font-weight:800;
+
+    box-shadow:0 6px 18px rgba(8,47,91,.06);
+}
+
+.status-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 0 4px rgba(31,167,106,.12);
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
 
 .hero{
-  position:relative;
-  overflow:hidden;
-  padding:26px 20px 30px;
-  background:linear-gradient(135deg,#06254b 0%,#0b4c87 65%,#f58220 145%);
-  color:white;
-  border-radius:0 0 30px 30px;
-  box-shadow:0 12px 30px rgba(7,43,87,.18);
+    position:relative;
+    z-index:2;
+
+    min-height:290px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.96),
+            rgba(255,246,231,.94)
+        );
+
+    border:1px solid rgba(8,47,91,.07);
+    border-radius:26px;
+
+    padding:28px 20px 20px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 16px 40px rgba(8,47,91,.10);
 }
 
-.hero:before{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  background:rgba(255,255,255,.06);
-  right:-70px;
-  top:-70px;
+.hero::before{
+    content:"";
+    position:absolute;
+
+    width:210px;
+    height:210px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(245,130,32,.16),
+            rgba(245,130,32,.03) 55%,
+            transparent 70%
+        );
+
+    right:-50px;
+    top:-70px;
 }
 
-.hero:after{
-  content:"";
-  position:absolute;
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.12);
-  right:25px;
-  bottom:-65px;
+.hero::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:75px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(8,47,91,.035)
+        );
+
+    pointer-events:none;
 }
 
-.brand{
-  position:relative;
-  z-index:2;
-  font-size:12px;
-  letter-spacing:2px;
-  font-weight:700;
-  opacity:.9;
-  margin-bottom:20px;
+.hero-copy{
+    position:relative;
+    z-index:3;
+    max-width:390px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    margin-bottom:10px;
+
+    color:var(--orange-dark);
+
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+}
+
+.eyebrow::before{
+    content:"";
+    width:25px;
+    height:2px;
+    background:var(--orange);
+    border-radius:20px;
 }
 
 .hero h1{
-  position:relative;
-  z-index:2;
-  font-size:27px;
-  line-height:1.15;
-  margin-bottom:8px;
+    color:var(--navy);
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:31px;
+    line-height:1.04;
+    letter-spacing:-.7px;
+
+    max-width:330px;
 }
 
-.hero p{
-  position:relative;
-  z-index:2;
-  font-size:14px;
-  opacity:.84;
+.hero h1 span{
+    color:var(--orange);
 }
 
-.live-pill{
-  position:relative;
-  z-index:2;
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  margin-top:17px;
-  background:rgba(255,255,255,.14);
-  border:1px solid rgba(255,255,255,.20);
-  padding:8px 12px;
-  border-radius:50px;
-  font-size:12px;
-  backdrop-filter:blur(6px);
+.hero-sub{
+    margin-top:11px;
+
+    max-width:310px;
+
+    color:#667587;
+    font-size:12px;
+    line-height:1.55;
 }
 
-.live-dot{
-  width:8px;
-  height:8px;
-  background:#4ade80;
-  border-radius:50%;
-  box-shadow:0 0 0 4px rgba(74,222,128,.15);
+.promise-row{
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    margin-top:15px;
+
+    color:var(--navy);
+
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:.2px;
 }
 
-/* ================= CONTENT ================= */
+.promise-row span{
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.promise-row i{
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:var(--orange);
+    display:block;
+}
+
+
+/* =========================================
+   HERO BUS
+   ========================================= */
+
+.bus-stage{
+    position:relative;
+    z-index:2;
+
+    height:150px;
+    margin-top:-8px;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:flex-end;
+}
+
+.hero-bus{
+    position:relative;
+    z-index:3;
+
+    width:min(390px, 92%);
+    max-height:155px;
+
+    object-fit:contain;
+    object-position:right bottom;
+
+    filter:
+        drop-shadow(0 14px 12px rgba(5,35,66,.18));
+
+    opacity:.96;
+
+    animation:busFloat 4.5s ease-in-out infinite;
+}
+
+.bus-stage::after{
+    content:"";
+    position:absolute;
+
+    width:70%;
+    height:18px;
+
+    right:3%;
+    bottom:0;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(8,47,91,.16),
+            transparent 68%
+        );
+
+    filter:blur(3px);
+}
+
+@keyframes busFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
 
 .content{
-  padding:18px 15px;
+    padding:19px 16px 38px;
 }
 
-.section-label{
-  color:var(--orange);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.5px;
-  margin:7px 4px 8px;
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    margin:8px 4px 10px;
+
+    color:var(--orange-dark);
+
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1.6px;
 }
+
+.section-title::before{
+    content:"";
+    width:25px;
+    height:2px;
+    border-radius:10px;
+    background:var(--orange);
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
 
 .card{
-  background:white;
-  border-radius:22px;
-  padding:19px;
-  margin-bottom:17px;
-  box-shadow:0 8px 25px rgba(15,42,72,.08);
-  border:1px solid rgba(10,62,112,.06);
+    background:rgba(255,255,255,.92);
+
+    border:1px solid rgba(8,47,91,.07);
+    border-radius:22px;
+
+    padding:18px;
+
+    margin-bottom:18px;
+
+    box-shadow:
+        0 10px 28px rgba(8,47,91,.075);
 }
 
-/* ================= BUS INFO ================= */
 
-.bus-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding-bottom:15px;
-  border-bottom:1px solid #edf1f6;
+/* =========================================
+   BUS NUMBER
+   ========================================= */
+
+.bus-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+
+    padding-bottom:14px;
+
+    border-bottom:1px solid #edf0f3;
 }
 
 .bus-number small{
-  display:block;
-  color:var(--muted);
-  font-size:11px;
-  margin-bottom:4px;
+    display:block;
+
+    margin-bottom:4px;
+
+    color:var(--muted);
+
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1px;
 }
 
 .bus-number strong{
-  color:var(--navy);
-  font-size:22px;
+    color:var(--navy);
+
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:22px;
 }
 
-.service-badge{
-  background:#fff3e8;
-  color:#d96500;
-  font-size:11px;
-  font-weight:700;
-  padding:7px 10px;
-  border-radius:50px;
+.in-service{
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:7px 10px;
+
+    border-radius:50px;
+
+    background:#eefaf4;
+    color:#198754;
+
+    font-size:10px;
+    font-weight:800;
 }
 
-.route-box{
-  margin-top:17px;
-  background:linear-gradient(135deg,#f1f6fc,#fff8f1);
-  border-radius:16px;
-  padding:15px;
+.in-service::before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#28b36e;
 }
 
-.route-title{
-  font-size:11px;
-  color:var(--muted);
-  margin-bottom:10px;
+
+/* =========================================
+   ROUTE BOX
+   ========================================= */
+
+.route-card{
+    margin-top:15px;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f9fd,
+            #fff6e9
+        );
+
+    border:1px solid rgba(8,47,91,.055);
+}
+
+.route-label{
+    color:var(--muted);
+
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1px;
+
+    margin-bottom:10px;
 }
 
 .route-main{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:7px;
-  color:var(--navy);
-  font-weight:800;
-  font-size:15px;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:10px;
+
+    color:var(--navy);
+
+    font-size:14px;
+    font-weight:900;
 }
 
-.route-arrow{
-  flex:1;
-  height:2px;
-  background:linear-gradient(90deg,var(--blue),var(--orange));
-  position:relative;
-  min-width:30px;
+.route-line{
+    position:relative;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--navy),
+            var(--orange)
+        );
 }
 
-.route-arrow:after{
-  content:"›";
-  position:absolute;
-  right:-2px;
-  top:-10px;
-  color:var(--orange);
-  font-size:20px;
+.route-line::after{
+    content:"›";
+
+    position:absolute;
+    right:-2px;
+    top:-11px;
+
+    color:var(--orange);
+
+    font-size:21px;
 }
 
-.via{
-  margin-top:9px;
-  font-size:11px;
-  color:var(--muted);
+.route-via{
+    margin-top:8px;
+
+    color:#7c8794;
+
+    font-size:10px;
 }
 
-/* ================= STAFF ================= */
+
+/* =========================================
+   STAFF INFO
+   ========================================= */
 
 .staff-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:11px;
-  margin-top:16px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+
+    margin-top:15px;
 }
 
-.info-box{
-  background:#f8fafc;
-  border-radius:14px;
-  padding:13px;
-  border:1px solid #edf1f5;
+.info-item{
+    min-width:0;
+
+    padding:12px;
+
+    border-radius:13px;
+
+    background:#f8fafc;
+    border:1px solid #edf1f5;
 }
 
-.info-box span{
-  display:block;
-  font-size:10px;
-  color:var(--muted);
-  margin-bottom:5px;
+.info-item.full{
+    grid-column:1 / -1;
 }
 
-.info-box strong{
-  display:block;
-  font-size:13px;
-  color:var(--navy);
+.info-item span{
+    display:block;
+
+    margin-bottom:5px;
+
+    color:#8490a0;
+
+    font-size:8px;
+    font-weight:800;
+    letter-spacing:.7px;
 }
 
-.full{
-  grid-column:1/-1;
+.info-item strong{
+    display:block;
+
+    color:var(--navy);
+
+    font-size:12px;
+    line-height:1.35;
+
+    overflow-wrap:anywhere;
 }
 
-/* ================= BUTTONS ================= */
+
+/* =========================================
+   CALL BUTTONS
+   ========================================= */
 
 .actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:15px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+
+    margin-top:14px;
 }
 
-.btn{
-  text-decoration:none;
-  border-radius:13px;
-  padding:12px 8px;
-  text-align:center;
-  font-size:12px;
-  font-weight:800;
+.action-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+
+    min-height:43px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:11px;
+    font-weight:900;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
-.call{
-  color:white;
-  background:linear-gradient(135deg,#0b3769,#0d5799);
+.action-btn:active{
+    transform:scale(.97);
 }
 
-.help{
-  color:#c85d00;
-  background:#fff1e5;
-  border:1px solid #ffd7b3;
+.driver-call{
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-dark),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 7px 16px rgba(8,47,91,.16);
 }
 
-/* ================= ROUTE TIMINGS ================= */
+.helpline-call{
+    color:#c95f0a;
 
-.heading-row{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  margin-bottom:17px;
+    background:#fff3e6;
+
+    border:1px solid #ffd5ad;
 }
 
-.heading-icon{
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#0b3769,#0d5799);
-  color:white;
-  font-size:20px;
+
+/* =========================================
+   ROUTE TIMING HEADER
+   ========================================= */
+
+.timing-head{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    margin-bottom:16px;
 }
 
-.heading-row h2{
-  font-size:19px;
-  color:var(--navy);
+.timing-icon{
+    width:42px;
+    height:42px;
+
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-dark),
+            var(--blue)
+        );
+
+    color:white;
+
+    font-size:18px;
+
+    box-shadow:
+        0 7px 16px rgba(8,47,91,.15);
 }
 
-.heading-row p{
-  font-size:11px;
-  color:var(--muted);
-  margin-top:3px;
+.timing-head h2{
+    color:var(--navy);
+
+    font-family:Georgia, "Times New Roman", serif;
+
+    font-size:20px;
 }
 
-/* ================= TABS ================= */
+.timing-head p{
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+
+/* =========================================
+   ROUTE TABS
+   ========================================= */
 
 .tabs{
-  display:flex;
-  background:#f1f4f8;
-  padding:4px;
-  border-radius:13px;
-  margin-bottom:20px;
+    display:flex;
+
+    padding:4px;
+
+    margin-bottom:20px;
+
+    background:#f0f3f6;
+
+    border-radius:12px;
 }
 
 .tab{
-  width:50%;
-  border:0;
-  padding:10px 5px;
-  border-radius:10px;
-  font-size:11px;
-  font-weight:800;
-  cursor:pointer;
-  background:transparent;
-  color:#687386;
+    width:50%;
+
+    border:none;
+    outline:none;
+
+    padding:10px 5px;
+
+    border-radius:9px;
+
+    background:transparent;
+
+    color:#7b8795;
+
+    font-size:10px;
+    font-weight:900;
+
+    cursor:pointer;
 }
 
 .tab.active{
-  background:white;
-  color:var(--navy);
-  box-shadow:0 3px 10px rgba(15,42,72,.09);
+    background:white;
+    color:var(--navy);
+
+    box-shadow:
+        0 3px 10px rgba(8,47,91,.09);
 }
 
-/* ================= TIMELINE ================= */
 
-.timeline{
-  position:relative;
-  padding-left:11px;
-}
-
-.stop{
-  display:grid;
-  grid-template-columns:28px 1fr auto;
-  align-items:start;
-  position:relative;
-  min-height:61px;
-}
-
-.stop:not(:last-child):before{
-  content:"";
-  position:absolute;
-  left:7px;
-  top:16px;
-  height:calc(100% - 2px);
-  width:2px;
-  background:#dce5ef;
-}
-
-.dot{
-  width:16px;
-  height:16px;
-  border:4px solid #d8e5f3;
-  background:var(--blue);
-  border-radius:50%;
-  position:relative;
-  z-index:2;
-}
-
-.stop:first-child .dot,
-.stop:last-child .dot{
-  background:var(--orange);
-  border-color:#ffe0c4;
-}
-
-.stop-name{
-  padding-right:8px;
-}
-
-.stop-name strong{
-  display:block;
-  color:#172033;
-  font-size:14px;
-}
-
-.stop-name small{
-  color:#8992a2;
-  font-size:10px;
-}
-
-.time{
-  color:var(--navy);
-  background:#f4f7fb;
-  border-radius:8px;
-  padding:5px 8px;
-  font-size:11px;
-  font-weight:800;
-}
-
-/* ================= FOOTER ================= */
-
-.note{
-  background:linear-gradient(135deg,#fff7ef,#fff);
-  border-left:4px solid var(--orange);
-  padding:13px;
-  border-radius:10px;
-  color:#626b79;
-  font-size:11px;
-  line-height:1.5;
-  margin-top:6px;
-}
-
-.footer{
-  text-align:center;
-  padding:13px 15px 5px;
-  color:#7c8797;
-  font-size:10px;
-}
-
-.footer strong{
-  color:var(--navy);
-}
+/* =========================================
+   ROUTE TIMELINE
+   ========================================= */
 
 .route-panel{
-  display:none;
+    display:none;
 }
 
 .route-panel.active{
-  display:block;
+    display:block;
 }
 
-/* ================= MOBILE ================= */
+.timeline{
+    position:relative;
+    padding-left:4px;
+}
 
-@media(max-width:420px){
-  .hero{
-    padding:23px 17px 27px;
-    border-radius:0 0 25px 25px;
-  }
+.stop{
+    position:relative;
 
-  .hero h1{
-    font-size:24px;
-  }
+    display:grid;
+    grid-template-columns:27px 1fr auto;
+    align-items:start;
 
-  .content{
-    padding:15px 11px;
-  }
+    min-height:59px;
+}
 
-  .card{
-    padding:16px;
-    border-radius:19px;
-  }
+.stop:not(:last-child)::before{
+    content:"";
 
-  .route-main{
+    position:absolute;
+
+    left:7px;
+    top:15px;
+
+    width:2px;
+    height:calc(100% - 1px);
+
+    background:#dce4ec;
+}
+
+.stop-dot{
+    position:relative;
+    z-index:2;
+
+    width:16px;
+    height:16px;
+
+    border-radius:50%;
+
+    background:var(--navy);
+    border:4px solid #dce8f2;
+}
+
+.stop:first-child .stop-dot,
+.stop:last-child .stop-dot{
+    background:var(--orange);
+    border-color:#ffe1c6;
+}
+
+.stop-details{
+    padding-right:7px;
+}
+
+.stop-details strong{
+    display:block;
+
+    color:#243447;
+
     font-size:13px;
-  }
-
-  .staff-grid{
-    grid-template-columns:1fr 1fr;
-  }
 }
+
+.stop-details small{
+    display:block;
+
+    margin-top:2px;
+
+    color:#929baa;
+
+    font-size:9px;
+}
+
+.stop-time{
+    min-width:50px;
+
+    padding:5px 7px;
+
+    text-align:center;
+
+    border-radius:8px;
+
+    background:#f4f7fa;
+
+    color:var(--navy);
+
+    font-size:10px;
+    font-weight:900;
+}
+
+
+/* =========================================
+   TRAVEL NOTE
+   ========================================= */
+
+.travel-note{
+    margin-top:7px;
+
+    padding:13px;
+
+    border-radius:11px;
+
+    border-left:4px solid var(--orange);
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff6ea,
+            #fffdf9
+        );
+
+    color:#687482;
+
+    font-size:10px;
+    line-height:1.55;
+}
+
+.travel-note strong{
+    color:var(--navy);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer{
+    padding:4px 15px 8px;
+
+    text-align:center;
+
+    color:#8a94a2;
+
+    font-size:9px;
+    line-height:1.7;
+}
+
+.footer strong{
+    color:var(--navy);
+    font-size:11px;
+}
+
+.footer-line{
+    width:35px;
+    height:2px;
+
+    margin:8px auto;
+
+    border-radius:10px;
+
+    background:var(--orange);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media(max-width:480px){
+
+    .top-area{
+        padding:16px 11px 0;
+    }
+
+    .brand-header{
+        padding:2px 4px 13px;
+    }
+
+    .company-logo{
+        width:175px;
+        max-width:61vw;
+    }
+
+    .service-status{
+        padding:7px 9px;
+        font-size:9px;
+    }
+
+    .hero{
+        min-height:278px;
+
+        padding:
+            24px 16px 15px;
+
+        border-radius:22px;
+    }
+
+    .hero h1{
+        font-size:27px;
+        max-width:290px;
+    }
+
+    .hero-sub{
+        font-size:11px;
+        max-width:270px;
+    }
+
+    .promise-row{
+        font-size:8px;
+        gap:5px;
+    }
+
+    .bus-stage{
+        height:145px;
+        margin-top:-4px;
+    }
+
+    .hero-bus{
+        width:96%;
+        max-height:145px;
+    }
+
+    .content{
+        padding:16px 11px 32px;
+    }
+
+    .card{
+        padding:15px;
+        border-radius:18px;
+    }
+
+    .bus-number strong{
+        font-size:20px;
+    }
+
+    .route-main{
+        font-size:12px;
+    }
+
+    .staff-grid{
+        gap:8px;
+    }
+
+    .info-item{
+        padding:10px;
+    }
+
+    .info-item strong{
+        font-size:11px;
+    }
+
+    .action-btn{
+        min-height:41px;
+        font-size:10px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media(max-width:350px){
+
+    .company-logo{
+        width:150px;
+    }
+
+    .service-status{
+        font-size:8px;
+    }
+
+    .hero h1{
+        font-size:24px;
+    }
+
+    .staff-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-item.full{
+        grid-column:auto;
+    }
+
+    .actions{
+        grid-template-columns:1fr;
+    }
+}
+
 </style>
 </head>
+
 
 <body>
 
 <div class="page">
 
-  <header class="hero">
-    <div class="brand">PATIDAR TOURS &amp; TRAVELS</div>
 
-    <h1>Your Journey,<br>Our Responsibility.</h1>
+<!-- ======================================
+     TOP BRAND + HERO
+     ====================================== -->
 
-    <p>Reliable service • Comfortable journey • On-time travel</p>
+<div class="top-area">
 
-    <div class="live-pill">
-      <span class="live-dot"></span>
-      Bus Information
-    </div>
-  </header>
+    <div class="brand-header">
 
-
-  <main class="content">
-
-    <div class="section-label">TODAY'S BUS INFORMATION</div>
-
-    <section class="card">
-
-      <div class="bus-top">
-        <div class="bus-number">
-          <small>BUS NUMBER</small>
-          <strong>MP 13 ____</strong>
+        <div class="logo-wrap">
+            <img
+                src="patidar-logo.png.png"
+                alt="Patidar Travels"
+                class="company-logo">
         </div>
 
-        <div class="service-badge">● In Service</div>
-      </div>
-
-
-      <div class="route-box">
-        <div class="route-title">TODAY'S ROUTE</div>
-
-        <div class="route-main">
-          <span>INDORE</span>
-          <span class="route-arrow"></span>
-          <span>KHARGONE</span>
+        <div class="service-status">
+            <span class="status-dot"></span>
+            BUS INFO
         </div>
 
-        <div class="via">
-          Via Dhamnod • Khalghat • Kasrawad
-        </div>
-      </div>
-
-
-      <div class="staff-grid">
-
-        <div class="info-box">
-          <span>TODAY'S DRIVER</span>
-          <strong>Driver Name</strong>
-        </div>
-
-        <div class="info-box">
-          <span>DRIVER CONTACT</span>
-          <strong>+91 XXXXX XXXXX</strong>
-        </div>
-
-        <div class="info-box">
-          <span>CLEANER</span>
-          <strong>Cleaner Name</strong>
-        </div>
-
-        <div class="info-box">
-          <span>CLEANER CONTACT</span>
-          <strong>+91 XXXXX XXXXX</strong>
-        </div>
-
-        <div class="info-box full">
-          <span>PASSENGER HELPLINE</span>
-          <strong>+91 XXXXX XXXXX</strong>
-        </div>
-
-      </div>
-
-
-      <div class="actions">
-        <a class="btn call" href="tel:+91XXXXXXXXXX">
-          ☎ Call Driver
-        </a>
-
-        <a class="btn help" href="tel:+91XXXXXXXXXX">
-          ☎ Helpline
-        </a>
-      </div>
-
-    </section>
-
-
-    <div class="section-label">ROUTE &amp; TIMINGS</div>
-
-    <section class="card">
-
-      <div class="heading-row">
-
-        <div class="heading-icon">↗</div>
-
-        <div>
-          <h2>Route Timings</h2>
-          <p>Select your travel direction</p>
-        </div>
-
-      </div>
-
-
-      <div class="tabs">
-
-        <button class="tab active"
-        onclick="showRoute('indore',this)">
-          Indore → Khargone
-        </button>
-
-        <button class="tab"
-        onclick="showRoute('khargone',this)">
-          Khargone → Indore
-        </button>
-
-      </div>
-
-
-      <!-- INDORE TO KHARGONE -->
-
-      <div id="indore" class="route-panel active">
-
-        <div class="timeline">
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Indore</strong>
-              <small>Sarvate Bus Stand</small>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Musakhedi</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Choithram</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Rau</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Manpur</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Gujri</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Khalghat</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Kasrawad</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Ozhra</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Khargone</strong>
-              <small>Bus Stand</small>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <!-- KHARGONE TO INDORE -->
-
-      <div id="khargone" class="route-panel">
-
-        <div class="timeline">
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Khargone</strong>
-              <small>Bus Stand</small>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Ozhra</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Kasrawad</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Khalghat</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Gujri</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Manpur</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Rau</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Choithram</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Musakhedi</strong>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-          <div class="stop">
-            <div class="dot"></div>
-            <div class="stop-name">
-              <strong>Indore</strong>
-              <small>Sarvate Bus Stand</small>
-            </div>
-            <div class="time">--:--</div>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="note">
-        <strong>Travel Note:</strong>
-        Timings may vary slightly depending on traffic and road conditions.
-        Please reach your boarding point a few minutes before the scheduled time.
-      </div>
-
-    </section>
-
-
-    <div class="footer">
-      <strong>Patidar Tours &amp; Travels</strong><br><br>
-      Safe Journey • Happy Journey
     </div>
 
-  </main>
+
+    <section class="hero">
+
+        <div class="hero-copy">
+
+            <div class="eyebrow">
+                Patidar Travels
+            </div>
+
+            <h1>
+                Your Journey,<br>
+                <span>Our Responsibility.</span>
+            </h1>
+
+            <p class="hero-sub">
+                Comfortable journeys, dependable service
+                and a travel experience built around you.
+            </p>
+
+            <div class="promise-row">
+
+                <span>
+                    <i></i>
+                    SAFE
+                </span>
+
+                <span>
+                    <i></i>
+                    COMFORTABLE
+                </span>
+
+                <span>
+                    <i></i>
+                    ON TIME
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="bus-stage">
+
+            <img
+                src="patidar - bus.png"
+                alt="Patidar Travels Bus"
+                class="hero-bus">
+
+        </div>
+
+    </section>
 
 </div>
 
 
+
+<!-- ======================================
+     MAIN CONTENT
+     ====================================== -->
+
+<main class="content">
+
+
+<!-- TODAY BUS INFORMATION -->
+
+<div class="section-title">
+    TODAY'S BUS INFORMATION
+</div>
+
+
+<section class="card">
+
+    <div class="bus-head">
+
+        <div class="bus-number">
+
+            <small>BUS NUMBER</small>
+
+            <strong>
+                MP 13 ____
+            </strong>
+
+        </div>
+
+
+        <div class="in-service">
+            In Service
+        </div>
+
+    </div>
+
+
+
+    <!-- ROUTE -->
+
+    <div class="route-card">
+
+        <div class="route-label">
+            TODAY'S ROUTE
+        </div>
+
+        <div class="route-main">
+
+            <span>INDORE</span>
+
+            <div class="route-line"></div>
+
+            <span>KHARGONE</span>
+
+        </div>
+
+        <div class="route-via">
+            Via Dhamnod • Khalghat • Kasrawad
+        </div>
+
+    </div>
+
+
+
+    <!-- STAFF DETAILS -->
+
+    <div class="staff-grid">
+
+
+        <div class="info-item">
+
+            <span>
+                TODAY'S DRIVER
+            </span>
+
+            <strong>
+                Driver Name
+            </strong>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <span>
+                DRIVER CONTACT
+            </span>
+
+            <strong>
+                +91 XXXXX XXXXX
+            </strong>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <span>
+                CLEANER
+            </span>
+
+            <strong>
+                Cleaner Name
+            </strong>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <span>
+                CLEANER CONTACT
+            </span>
+
+            <strong>
+                +91 XXXXX XXXXX
+            </strong>
+
+        </div>
+
+
+        <div class="info-item full">
+
+            <span>
+                PASSENGER HELPLINE
+            </span>
+
+            <strong>
+                +91 XXXXX XXXXX
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CALL BUTTONS -->
+
+    <div class="actions">
+
+        <a
+            class="action-btn driver-call"
+            href="tel:+91XXXXXXXXXX">
+
+            ☎ &nbsp; Call Driver
+
+        </a>
+
+
+        <a
+            class="action-btn helpline-call"
+            href="tel:+91XXXXXXXXXX">
+
+            ☎ &nbsp; Helpline
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     ROUTE TIMINGS
+     ====================================== -->
+
+<div class="section-title">
+    ROUTE &amp; TIMINGS
+</div>
+
+
+<section class="card">
+
+
+    <div class="timing-head">
+
+        <div class="timing-icon">
+            ↗
+        </div>
+
+
+        <div>
+
+            <h2>
+                Route Timings
+            </h2>
+
+            <p>
+                Select your travel direction
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- DIRECTION TABS -->
+
+    <div class="tabs">
+
+
+        <button
+            class="tab active"
+            onclick="showRoute('indoreRoute',this)">
+
+            Indore → Khargone
+
+        </button>
+
+
+        <button
+            class="tab"
+            onclick="showRoute('khargoneRoute',this)">
+
+            Khargone → Indore
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- ==================================
+         INDORE TO KHARGONE
+         ================================== -->
+
+    <div
+        id="indoreRoute"
+        class="route-panel active">
+
+
+        <div class="timeline">
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Indore
+                    </strong>
+
+                    <small>
+                        Sarvate Bus Stand
+                    </small>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Musakhedi
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Choithram
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Rau
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Manpur
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Gujri
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Khalghat
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Kasrawad
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Ozhra
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Khargone
+                    </strong>
+
+                    <small>
+                        Bus Stand
+                    </small>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================
+         KHARGONE TO INDORE
+         ================================== -->
+
+    <div
+        id="khargoneRoute"
+        class="route-panel">
+
+
+        <div class="timeline">
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Khargone
+                    </strong>
+
+                    <small>
+                        Bus Stand
+                    </small>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Ozhra
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Kasrawad
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Khalghat
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Gujri
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Manpur
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Rau
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Choithram
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Musakhedi
+                    </strong>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+
+            <div class="stop">
+
+                <div class="stop-dot"></div>
+
+                <div class="stop-details">
+
+                    <strong>
+                        Indore
+                    </strong>
+
+                    <small>
+                        Sarvate Bus Stand
+                    </small>
+
+                </div>
+
+                <div class="stop-time">
+                    --:--
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TRAVEL NOTE -->
+
+    <div class="travel-note">
+
+        <strong>Travel Note:</strong>
+
+        Timings may vary slightly depending on
+        traffic and road conditions.
+        Please reach your boarding point a few
+        minutes before the scheduled time.
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ======================================
+     FOOTER
+     ====================================== -->
+
+<footer class="footer">
+
+    <strong>
+        Patidar Travels
+    </strong>
+
+    <div class="footer-line"></div>
+
+    Aapka Safar, Hamari Jimmedari
+
+</footer>
+
+
+</main>
+
+</div>
+
+
+
+<!-- ======================================
+     JAVASCRIPT
+     ====================================== -->
+
 <script>
-function showRoute(route,button){
 
-  document.querySelectorAll('.route-panel')
-  .forEach(function(panel){
-    panel.classList.remove('active');
-  });
+function showRoute(routeId, button){
 
-  document.querySelectorAll('.tab')
-  .forEach(function(tab){
-    tab.classList.remove('active');
-  });
+    document
+        .querySelectorAll(".route-panel")
+        .forEach(function(panel){
 
-  document.getElementById(route)
-  .classList.add('active');
+            panel.classList.remove("active");
 
-  button.classList.add('active');
+        });
+
+
+    document
+        .querySelectorAll(".tab")
+        .forEach(function(tab){
+
+            tab.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(routeId)
+        .classList.add("active");
+
+
+    button.classList.add("active");
+
 }
+
 </script>
+
 
 </body>
 </html>
