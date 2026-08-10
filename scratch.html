@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lucky Scratch Coupon | Patidar Tours & Travels</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="scratch-page">
+
+<img src="patidar-logo.png.png" class="logo" alt="Patidar Logo">
+
+<h1>Lucky Scratch Coupon</h1>
+
+<p>
+
+Fill your details to unlock your Lucky Scratch Card.
+
+</p>
+
+<form id="scratchForm">
+
+<label>Passenger Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name"
+required>
+
+<label>Seat Number</label>
+
+<input
+type="number"
+id="seat"
+placeholder="Seat No."
+required>
+
+<label>Mobile Number</label>
+
+<input
+type="tel"
+id="mobile"
+placeholder="10 Digit Mobile Number"
+required>
+
+<button type="submit">
+
+Continue
+
+</button>
+
+</form>
+<div id="scratchArea" style="display:none; margin-top:30px;">
+
+<h2>🎉 Congratulations!</h2>
+
+<p>
+
+Your Lucky Coupon is ready.
+
+Scratch below to reveal your reward.
+
+</p>
+
+<div id="couponCard" class="coupon-card">
+
+<div id="couponText">
+
+🎁 Scratch Here
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+  
+<script src="script.js"></script>
+  
+</body>
+
+</html>
