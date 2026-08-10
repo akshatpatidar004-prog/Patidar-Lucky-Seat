@@ -523,14 +523,35 @@ function startScratch(){
     prepareReward(seat);
 
     createScratchCard();
-
+sendToSheet(name, seat, mobile);
     document.getElementById("scratchSection")
         .scrollIntoView({
             behavior:"smooth"
         });
 
 }
+function sendToSheet(name, seat, mobile){
 
+    const data = {
+        name: name,
+        mobile: mobile,
+        seat: seat,
+        route: "Indore → Khargone",
+        result: (seat === 3 || seat === 9)
+            ? "50% Discount"
+            : "Better Luck Next Time"
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbzo8jOYAl-x3GA1VL60-CU2VvFolRfwS7y-OkVDxtn1swkFW45s-7cXkdLIDMtQhQ65IA/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(data)
+    });
+
+}
 function prepareReward(seat){
 
     const title =
