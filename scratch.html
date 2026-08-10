@@ -7,32 +7,301 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Patidar Tours & Travels</title>
+<title>Lucky Scratch Coupon | Patidar Tours & Travels</title>
 
-<link rel="stylesheet"
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',Arial,sans-serif;
+    background:#fff8ee;
+    color:#17345d;
+}
+
+.page{
+    width:100%;
+    max-width:620px;
+    min-height:100vh;
+    margin:auto;
+    padding:22px 16px 35px;
+}
+
+/* BRAND */
+
+.brand{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.brand img{
+    width:120px;
+    display:block;
+    margin:0 auto 10px;
+}
+
+.brand h1{
+    font-family:Georgia,serif;
+    font-size:25px;
+    font-weight:900;
+}
+
+.brand p{
+    color:#f58220;
+    font-size:13px;
+    font-weight:700;
+    margin-top:5px;
+}
+
+/* FORM CARD */
+
+.form-card{
+    background:#fff;
+    border-radius:30px;
+    padding:28px 20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.09);
+    border:1px solid rgba(245,130,32,.18);
+}
+
+.gift{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:8px;
+}
+
+.form-card h2{
+    text-align:center;
+    font-family:Georgia,serif;
+    font-size:30px;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.intro{
+    text-align:center;
+    color:#666;
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    font-size:14px;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.form-group input{
+    width:100%;
+    height:54px;
+    border:1px solid #ddd;
+    border-radius:14px;
+    padding:0 15px;
+    font-family:inherit;
+    font-size:15px;
+    outline:none;
+}
+
+.form-group input:focus{
+    border-color:#f58220;
+    box-shadow:0 0 0 3px rgba(245,130,32,.10);
+}
+
+.continue-btn{
+    width:100%;
+    border:0;
+    border-radius:50px;
+    padding:17px;
+    background:linear-gradient(90deg,#f58220,#ff941f);
+    color:#fff;
+    font-family:inherit;
+    font-size:18px;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(245,130,32,.25);
+}
+
+.error{
+    display:none;
+    background:#fff0f0;
+    color:#c62828;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+/* SCRATCH AREA */
+
+#scratchSection{
+    display:none;
+    margin-top:22px;
+}
+
+.scratch-intro{
+    text-align:center;
+    margin-bottom:18px;
+}
+
+.scratch-intro h2{
+    font-family:Georgia,serif;
+    font-size:29px;
+    margin-bottom:7px;
+}
+
+.scratch-intro p{
+    color:#666;
+    font-size:14px;
+}
+
+/* CARD */
+
+.scratch-box{
+    position:relative;
+    width:100%;
+    max-width:390px;
+    height:230px;
+    margin:20px auto;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    background:#17345d;
+}
+
+/* REWARD UNDER SCRATCH */
+
+.reward{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(135deg,#fff8e9,#ffe2bb);
+}
+
+.reward small{
+    color:#777;
+    font-weight:700;
+}
+
+.reward h3{
+    font-family:Georgia,serif;
+    font-size:30px;
+    margin:7px 0;
+}
+
+.win{
+    color:#188b45;
+}
+
+.lose{
+    color:#17345d;
+}
+
+.reward strong{
+    font-size:43px;
+    color:#f58220;
+}
+
+.reward p{
+    color:#666;
+    font-size:13px;
+}
+
+/* CANVAS */
+
+#scratchCanvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    cursor:crosshair;
+    touch-action:none;
+}
+
+/* DETAILS */
+
+.result-details{
+    background:#fff;
+    border-radius:20px;
+    padding:18px;
+    margin-top:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+
+.result-row{
+    display:flex;
+    justify-content:space-between;
+    padding:9px 0;
+    border-bottom:1px solid #eee;
+    font-size:13px;
+}
+
+.result-row:last-child{
+    border-bottom:0;
+}
+
+.result-row span:first-child{
+    color:#777;
+}
+
+.result-row span:last-child{
+    font-weight:800;
+}
+
+.note{
+    text-align:center;
+    color:#888;
+    font-size:12px;
+    margin-top:15px;
+}
+
+@media(max-width:600px){
+
+    .page{
+        padding:18px 13px 30px;
+    }
+
+    .scratch-box{
+        height:220px;
+    }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
 
-<!-- ================= BRAND ================= -->
+<!-- BRAND -->
 
-<header class="top-header">
-
-<div class="logo-box">
+<div class="brand">
 
 <img
 src="patidar-logo.png"
-alt="Patidar Tours & Travels Logo"
-class="logo">
+alt="Patidar Tours & Travels">
 
 <h1>PATIDAR TOURS &amp; TRAVELS</h1>
 
@@ -40,262 +309,466 @@ class="logo">
 
 </div>
 
-<!-- ================= BUS ================= -->
 
-<div class="bus-box">
+<!-- FORM -->
 
-<img
-src="patidar-bus.png"
-alt="Patidar Bus"
-class="bus-image">
+<div class="form-card" id="formCard">
 
-</div>
-
-</header>
-
-
-<!-- ================= RESPONSIBILITY ================= -->
-
-<section class="hero-card">
-
-<h2>
-Your Journey,
-<span>Our Responsibility.</span>
-</h2>
-
-<p>
-Comfortable journeys, dependable service and a travel
-experience built around you.
-</p>
-
-<div class="features">
-
-<span>SAFE</span>
-
-<span>COMFORTABLE</span>
-
-<span>ON TIME</span>
-
-</div>
-
-</section>
-
-
-<!-- ================= LUCKY SCRATCH ================= -->
-
-<section class="scratch-card">
-
-<div class="gift-icon">
+<div class="gift">
 🎁
 </div>
 
 <h2>Lucky Scratch Coupon</h2>
 
-<p>
-Enter your details and check whether your seat is today's
-Lucky Seat. Win up to <strong>50% Discount</strong>
-on your journey.
+<p class="intro">
+Fill your details below and check whether
+your seat is today's Lucky Seat.
 </p>
 
-<a href="scratch.html" class="scratch-btn">
-🍀 Scratch &amp; Win
-</a>
+<div id="error" class="error"></div>
+
+
+<div class="form-group">
+
+<label for="name">
+Passenger Name
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name">
+
+</div>
+
+
+<div class="form-group">
+
+<label for="seat">
+Seat Number
+</label>
+
+<input
+type="number"
+id="seat"
+min="1"
+max="45"
+placeholder="Enter seat number">
+
+</div>
+
+
+<div class="form-group">
+
+<label for="mobile">
+Mobile Number
+</label>
+
+<input
+type="tel"
+id="mobile"
+maxlength="10"
+placeholder="Enter 10 digit mobile number">
+
+</div>
+
+
+<button
+type="button"
+class="continue-btn"
+onclick="startScratch()">
+
+Continue →
+
+</button>
+
+<p class="note">
+Please enter the same seat number you are travelling on.
+</p>
+
+</div>
+
+
+<!-- SCRATCH -->
+
+<section id="scratchSection">
+
+<div class="scratch-intro">
+
+<h2>🎉 Your Lucky Card</h2>
+
+<p>Scratch the card below to reveal your result.</p>
+
+</div>
+
+
+<div class="scratch-box">
+
+<div class="reward" id="reward">
+
+<small>YOUR LUCKY RESULT</small>
+
+<h3 id="rewardTitle">
+Good Luck!
+</h3>
+
+<strong id="rewardAmount">
+?
+</strong>
+
+<p id="rewardText">
+Scratch to reveal your reward.
+</p>
+
+</div>
+
+<canvas id="scratchCanvas"></canvas>
+
+</div>
+
+
+<div class="result-details">
+
+<div class="result-row">
+<span>Passenger</span>
+<span id="resultName"></span>
+</div>
+
+<div class="result-row">
+<span>Seat Number</span>
+<span id="resultSeat"></span>
+</div>
+
+<div class="result-row">
+<span>Route</span>
+<span>Indore → Khargone</span>
+</div>
+
+</div>
+
+<p class="note">
+Scratch at least 70% of the card to reveal your result.
+</p>
 
 </section>
 
-
-<!-- ================= TODAY'S BUS INFORMATION ================= -->
-
-<section class="bus-info">
-
-<div class="section-title">
-TODAY'S BUS INFORMATION
-</div>
-
-<div class="bus-card">
-
-<div class="bus-head">
-
-<div class="bus-number">
-
-<small>BUS NUMBER</small>
-
-<h2>MP 13</h2>
-
-</div>
-
-<div class="status">
-
-<span class="dot"></span>
-
-In Service
-
-</div>
-
 </div>
 
 
-<!-- ROUTE -->
+<script>
 
-<div class="route-card">
+let canvas;
+let ctx;
+let scratching = false;
+let scratchedPixels = 0;
+let totalPixels = 0;
+let scratchFinished = false;
 
-<small>TODAY'S ROUTE</small>
+function showError(message){
 
-<div class="route-line">
+    const error =
+        document.getElementById("error");
 
-<span>INDORE</span>
+    error.textContent = message;
 
-<i class="fas fa-arrow-right"></i>
+    error.style.display = "block";
 
-<span>KHARGONE</span>
+}
 
-</div>
+function startScratch(){
 
-<p>
-Via Dhamnod • Khalghat • Kasrawad
-</p>
+    const name =
+        document.getElementById("name").value.trim();
 
-</div>
+    const seat =
+        parseInt(document.getElementById("seat").value);
 
+    const mobile =
+        document.getElementById("mobile").value.trim();
 
-<!-- DRIVER -->
+    if(name === ""){
 
-<div class="driver-grid">
+        showError("Please enter your name.");
 
-<div class="driver-box">
+        return;
 
-<small>TODAY'S DRIVER</small>
+    }
 
-<h3>Driver Name</h3>
+    if(isNaN(seat) || seat < 1 || seat > 45){
 
-</div>
+        showError("Please enter a valid seat number from 1 to 45.");
 
-<div class="driver-box">
+        return;
 
-<small>DRIVER CONTACT</small>
+    }
 
-<h3>+91 XXXXX XXXXX</h3>
+    if(!/^[0-9]{10}$/.test(mobile)){
 
-</div>
+        showError("Please enter a valid 10 digit mobile number.");
 
-</div>
+        return;
 
+    }
 
-<!-- ACTION BUTTONS -->
+    document.getElementById("error").style.display="none";
 
-<div class="buttons">
+    document.getElementById("resultName").textContent=name;
 
-<a href="tel:+91XXXXXXXXXX">
-📞 Call Driver
-</a>
+    document.getElementById("resultSeat").textContent=seat;
 
-<a href="tel:+91XXXXXXXXXX">
-☎ Helpline
-</a>
+    document.getElementById("formCard").style.display="none";
 
-</div>
+    document.getElementById("scratchSection").style.display="block";
 
-</div>
+    prepareReward(seat);
 
-</section>
+    createScratchCard();
 
+    document.getElementById("scratchSection")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
-<!-- ================= ROUTE & STOPS ================= -->
+}
 
-<section class="route-section">
+function prepareReward(seat){
 
-<div class="section-title">
-ROUTE &amp; STOPS
-</div>
+    const title =
+        document.getElementById("rewardTitle");
 
-<div class="time-card">
+    const amount =
+        document.getElementById("rewardAmount");
 
-<div class="time-row">
+    const text =
+        document.getElementById("rewardText");
 
-<span>Indore</span>
+    if(seat === 3 || seat === 9){
 
-<span>--:--</span>
+        title.textContent="Congratulations!";
 
-</div>
+        title.className="win";
 
-<div class="time-row">
+        amount.textContent="50%";
 
-<span>Rau</span>
+        text.textContent=
+        "You have won 50% Discount on your journey.";
 
-<span>--:--</span>
+    }else{
 
-</div>
+        title.textContent="Better Luck Next Time";
 
-<div class="time-row">
+        title.className="lose";
 
-<span>Mhow</span>
+        amount.textContent="😊";
 
-<span>--:--</span>
+        text.textContent=
+        "This seat is not today's Lucky Seat.";
 
-</div>
+    }
 
-<div class="time-row">
+}
 
-<span>Dhamnod</span>
+function createScratchCard(){
 
-<span>--:--</span>
+    canvas =
+        document.getElementById("scratchCanvas");
 
-</div>
+    const box =
+        document.querySelector(".scratch-box");
 
-<div class="time-row">
+    const rect =
+        box.getBoundingClientRect();
 
-<span>Khalghat</span>
+    const ratio =
+        window.devicePixelRatio || 1;
 
-<span>--:--</span>
+    canvas.width =
+        rect.width * ratio;
 
-</div>
+    canvas.height =
+        rect.height * ratio;
 
-<div class="time-row">
+    canvas.style.width =
+        rect.width + "px";
 
-<span>Kasrawad</span>
+    canvas.style.height =
+        rect.height + "px";
 
-<span>--:--</span>
+    ctx =
+        canvas.getContext("2d");
 
-</div>
+    ctx.scale(ratio,ratio);
 
-<div class="time-row">
+    /* GOLDEN SCRATCH SURFACE */
 
-<span>Khargone</span>
+    const gradient =
+        ctx.createLinearGradient(
+            0,
+            0,
+            rect.width,
+            rect.height
+        );
 
-<span>--:--</span>
+    gradient.addColorStop(0,"#f58220");
 
-</div>
+    gradient.addColorStop(.5,"#ffb347");
 
-</div>
+    gradient.addColorStop(1,"#e86f0c");
 
-</section>
+    ctx.fillStyle=gradient;
 
+    ctx.fillRect(
+        0,
+        0,
+        rect.width,
+        rect.height
+    );
 
-<!-- ================= FOOTER ================= -->
+    /* TEXT */
 
-<footer class="footer">
+    ctx.fillStyle="#ffffff";
 
-<img
-src="patidar-logo.png"
-alt="Patidar Travels"
-class="footer-logo">
+    ctx.textAlign="center";
 
-<h3>PATIDAR TOURS &amp; TRAVELS</h3>
+    ctx.font="800 25px Poppins";
 
-<p>
-Aapka Safar, Hamari Jimmedari
-</p>
+    ctx.fillText(
+        "SCRATCH HERE",
+        rect.width/2,
+        rect.height/2-5
+    );
 
-<p class="copyright">
-© 2026 Patidar Tours &amp; Travels
-</p>
+    ctx.font="600 14px Poppins";
 
-</footer>
+    ctx.fillText(
+        "Use your finger to reveal",
+        rect.width/2,
+        rect.height/2+25
+    );
 
-</div>
+    totalPixels =
+        canvas.width * canvas.height;
 
+    canvas.addEventListener(
+        "pointerdown",
+        startDrawing
+    );
 
-<script src="script.js"></script>
+    canvas.addEventListener(
+        "pointermove",
+        draw
+    );
+
+    canvas.addEventListener(
+        "pointerup",
+        stopDrawing
+    );
+
+    canvas.addEventListener(
+        "pointerleave",
+        stopDrawing
+    );
+
+}
+
+function startDrawing(event){
+
+    scratching=true;
+
+    draw(event);
+
+}
+
+function stopDrawing(){
+
+    scratching=false;
+
+}
+
+function draw(event){
+
+    if(!scratching || scratchFinished){
+
+        return;
+
+    }
+
+    const rect =
+        canvas.getBoundingClientRect();
+
+    const x =
+        event.clientX - rect.left;
+
+    const y =
+        event.clientY - rect.top;
+
+    ctx.globalCompositeOperation =
+        "destination-out";
+
+    ctx.beginPath();
+
+    ctx.arc(
+        x,
+        y,
+        24,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.fill();
+
+    checkScratchProgress();
+
+}
+
+function checkScratchProgress(){
+
+    const data =
+        ctx.getImageData(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        ).data;
+
+    let transparent=0;
+
+    for(
+        let i=3;
+        i<data.length;
+        i+=16
+    ){
+
+        if(data[i] < 100){
+
+            transparent++;
+
+        }
+
+    }
+
+    const total =
+        data.length / 16;
+
+    const percentage =
+        (transparent / total) * 100;
+
+    if(percentage >= 70){
+
+        scratchFinished=true;
+
+        ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+    }
+
+}
+
+</script>
 
 </body>
 
