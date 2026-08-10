@@ -1,678 +1,475 @@
-/* ===================================================
-   PATIDAR TRAVELS
-   FINAL STYLE V1
-=================================================== */
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 :root{
-
---navy:#17345D;
---orange:#F58220;
---light:#FFF8EE;
---white:#ffffff;
---text:#666666;
-
+    --navy:#17345d;
+    --orange:#f58220;
+    --cream:#fff8ee;
+    --white:#ffffff;
+    --green:#188b45;
+    --text:#555;
 }
 
 body{
-
-font-family:'Poppins',sans-serif;
-
-background:var(--light);
-
-color:var(--navy);
-
+    font-family:'Poppins',Arial,sans-serif;
+    background:var(--cream);
+    color:var(--navy);
 }
 
 .container{
-
-max-width:600px;
-
-margin:auto;
-
-background:var(--light);
-
-min-height:100vh;
-
-overflow:hidden;
-
+    width:100%;
+    max-width:620px;
+    margin:auto;
+    padding:20px 16px 0;
 }
 
 /* ================= HEADER ================= */
 
 .top-header{
+    text-align:center;
+    padding-top:10px;
+}
 
-padding:30px 20px 10px;
-
-text-align:center;
-
+.logo-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .logo{
-
-width:290px;
-
-max-width:95%;
-
-display:block;
-
-margin:auto;
-
+    width:145px;
+    height:auto;
+    display:block;
+    margin:0 auto 12px;
 }
 
 .logo-box h1{
+    order:2;
+    font-family:Georgia,serif;
+    font-size:42px;
+    line-height:1.05;
+    font-weight:900;
+    letter-spacing:1px;
+    color:var(--navy);
+    margin:0;
+}
 
-font-size:42px;
-
-font-weight:800;
-
-margin-top:15px;
-
-letter-spacing:1px;
-
+.logo-box h1::first-line{
+    color:var(--navy);
 }
 
 .logo-box p{
-
-font-size:17px;
-
-color:#666;
-
-margin-top:8px;
-
+    order:3;
+    margin-top:10px;
+    font-size:17px;
+    font-weight:700;
+    color:var(--orange);
+    letter-spacing:.5px;
 }
 
 .bus-box{
-
-display:flex;
-
-justify-content:center;
-
-margin-top:20px;
-
+    margin-top:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .bus-image{
-
-width:390px;
-
-max-width:100%;
-
-filter:drop-shadow(0 15px 25px rgba(0,0,0,.18));
-
+    width:340px;
+    max-width:90%;
+    display:block;
+    filter:drop-shadow(0 14px 18px rgba(0,0,0,.18));
 }
 
 /* ================= HERO ================= */
 
 .hero-card{
-
-background:#fff;
-
-margin:20px;
-
-padding:28px;
-
-border-radius:30px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-text-align:center;
-
+    background:#fff;
+    margin:18px 0;
+    padding:27px 22px;
+    border-radius:28px;
+    text-align:center;
+    box-shadow:0 10px 28px rgba(0,0,0,.09);
 }
 
 .brand-line{
-
-display:inline-block;
-
-padding:8px 18px;
-
-background:#FFF1E3;
-
-color:var(--orange);
-
-font-weight:700;
-
-border-radius:30px;
-
-margin-bottom:18px;
-
+    display:none;
 }
 
 .hero-card h2{
-
-font-size:42px;
-
-font-weight:800;
-
-line-height:1.1;
-
-margin-bottom:15px;
-
+    font-family:Georgia,serif;
+    font-size:34px;
+    line-height:1.12;
+    font-weight:900;
+    margin-bottom:13px;
 }
 
 .hero-card h2 span{
-
-display:block;
-
-color:var(--orange);
-
+    display:block;
+    color:var(--orange);
 }
 
 .hero-card p{
-
-color:#666;
-
-line-height:1.7;
-
-margin-bottom:18px;
-
+    color:#666;
+    font-size:15px;
+    line-height:1.65;
+    max-width:480px;
+    margin:0 auto 15px;
 }
 
 .features{
-
-display:flex;
-
-justify-content:center;
-
-gap:18px;
-
-flex-wrap:wrap;
-
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
 }
 
 .features span{
-
-font-weight:700;
-
-font-size:15px;
-
+    font-size:13px;
+    font-weight:800;
+    color:var(--navy);
 }
 
-/* ================= LUCKY SCRATCH ================= */
+.features span:not(:last-child)::after{
+    content:"•";
+    color:var(--orange);
+    margin-left:18px;
+}
+
+/* ================= SCRATCH ================= */
 
 .scratch-card{
-
-background:linear-gradient(135deg,#FFF7E8,#FFE6C4);
-
-margin:20px;
-
-padding:30px 24px;
-
-border-radius:28px;
-
-text-align:center;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-border:2px solid rgba(245,130,32,.18);
-
+    background:linear-gradient(135deg,#fff8e9,#fff0d6);
+    margin:18px 0 25px;
+    padding:28px 22px;
+    border-radius:28px;
+    text-align:center;
+    border:1px solid rgba(245,130,32,.25);
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
 }
 
 .gift-icon{
-
-font-size:52px;
-
-margin-bottom:12px;
-
+    font-size:52px;
+    margin-bottom:10px;
 }
 
 .scratch-card h2{
-
-font-size:32px;
-
-font-weight:800;
-
-margin-bottom:10px;
-
+    font-family:Georgia,serif;
+    font-size:31px;
+    font-weight:900;
+    margin-bottom:12px;
 }
 
 .scratch-card p{
-
-line-height:1.8;
-
-color:#666;
-
-margin-bottom:22px;
-
+    color:#666;
+    font-size:15px;
+    line-height:1.65;
+    margin-bottom:22px;
 }
 
 .scratch-card strong{
-
-color:#F58220;
-
+    color:var(--orange);
 }
 
 .scratch-btn{
-
-display:block;
-
-width:100%;
-
-padding:18px;
-
-border-radius:50px;
-
-background:#F58220;
-
-color:#fff;
-
-text-decoration:none;
-
-font-size:18px;
-
-font-weight:700;
-
-transition:.3s;
-
+    display:block;
+    width:100%;
+    padding:17px 20px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#f58220,#ff8b12);
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:800;
+    box-shadow:0 8px 18px rgba(245,130,32,.25);
 }
 
-.scratch-btn:hover{
+/* ================= TODAY BUS INFORMATION ================= */
 
-background:#D96E0F;
-
-transform:translateY(-2px);
-
+.bus-info{
+    margin-top:5px;
 }
-
-/* ================= SECTION TITLE ================= */
 
 .section-title{
-
-font-size:15px;
-
-font-weight:700;
-
-letter-spacing:2px;
-
-color:#888;
-
-margin:25px 20px 15px;
-
+    text-align:center;
+    position:relative;
+    margin:25px 0 15px;
+    color:var(--navy);
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:1px;
 }
 
-/* ================= BUS CARD ================= */
+.section-title::before,
+.section-title::after{
+    content:"";
+    display:inline-block;
+    width:55px;
+    height:3px;
+    background:var(--orange);
+    vertical-align:middle;
+    margin:0 12px;
+}
 
 .bus-card{
-
-background:#fff;
-
-margin:0 20px 20px;
-
-padding:24px;
-
-border-radius:24px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
+    background:#fff;
+    margin:0;
+    padding:22px;
+    border-radius:25px;
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
 }
 
 .bus-head{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:22px;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
 }
 
 .bus-number small{
-
-display:block;
-
-font-size:12px;
-
-color:#999;
-
-margin-bottom:5px;
-
+    display:block;
+    color:#888;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
 }
 
 .bus-number h2{
-
-font-size:34px;
-
-font-weight:800;
-
-color:#17345D;
-
+    font-size:32px;
+    font-weight:900;
+    margin-top:4px;
 }
 
 .status{
-
-display:flex;
-
-align-items:center;
-
-gap:8px;
-
-padding:8px 14px;
-
-background:#EAFBF0;
-
-color:#1B8A42;
-
-border-radius:30px;
-
-font-weight:700;
-
-font-size:14px;
-
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:9px 14px;
+    border-radius:30px;
+    background:#eaf9f0;
+    color:var(--green);
+    font-size:13px;
+    font-weight:800;
 }
 
 .dot{
-
-width:10px;
-
-height:10px;
-
-background:#1B8A42;
-
-border-radius:50%;
-
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--green);
 }
 
 .route-card{
-
-background:#FFF8EE;
-
-padding:18px;
-
-border-radius:18px;
-
-margin-bottom:18px;
-
+    background:#fff8ee;
+    border-radius:18px;
+    padding:19px;
+    margin-bottom:18px;
+    text-align:center;
 }
 
 .route-card small{
-
-display:block;
-
-font-size:12px;
-
-color:#888;
-
-margin-bottom:8px;
-
+    display:block;
+    color:#888;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:10px;
 }
 
 .route-line{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    font-size:21px;
+    font-weight:900;
+}
 
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:12px;
-
-font-size:18px;
-
-font-weight:700;
-
-margin-bottom:10px;
-
+.route-line i{
+    color:var(--orange);
 }
 
 .route-card p{
-
-text-align:center;
-
-color:#777;
-
+    margin-top:9px;
+    color:#777;
+    font-size:13px;
 }
 
+/* DRIVER */
+
 .driver-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:15px;
-
-margin-top:20px;
-
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
 }
 
 .driver-box{
-
-background:#F9F9F9;
-
-padding:16px;
-
-border-radius:16px;
-
+    background:#f8f9fb;
+    border-radius:17px;
+    padding:17px;
 }
 
 .driver-box small{
-
-display:block;
-
-font-size:12px;
-
-color:#999;
-
-margin-bottom:8px;
-
+    display:block;
+    color:#888;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.8px;
+    margin-bottom:7px;
 }
 
 .driver-box h3{
-
-font-size:17px;
-
-color:#17345D;
-
+    font-size:15px;
+    color:var(--navy);
 }
 
+/* BUTTONS */
+
 .buttons{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:14px;
-
-margin-top:22px;
-
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:18px;
 }
 
 .buttons a{
-
-display:block;
-
-text-align:center;
-
-padding:16px;
-
-border-radius:14px;
-
-text-decoration:none;
-
-font-weight:700;
-
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:15px;
+    font-weight:800;
+    color:#fff;
 }
 
 .buttons a:first-child{
-
-background:#17345D;
-
-color:#fff;
-
+    background:var(--navy);
 }
 
 .buttons a:last-child{
-
-background:#F58220;
-
-color:#fff;
-
+    background:var(--orange);
 }
 
 /* ================= ROUTE ================= */
 
 .route-section{
-
-margin:20px;
-
+    margin-top:10px;
 }
 
 .time-card{
-
-background:#fff;
-
-border-radius:24px;
-
-padding:22px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
+    background:#fff;
+    border-radius:24px;
+    padding:18px 22px;
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
 }
 
 .time-row{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:14px 0;
-
-border-bottom:1px solid #eee;
-
-font-size:16px;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:13px 0;
+    border-bottom:1px solid #eee;
+    font-size:16px;
+    font-weight:700;
 }
 
 .time-row:last-child{
-
-border-bottom:none;
-
+    border-bottom:0;
 }
 
 /* ================= FOOTER ================= */
 
 .footer{
-
-margin:35px 20px;
-
-padding:30px 20px;
-
-background:#17345D;
-
-border-radius:28px;
-
-text-align:center;
-
-color:#fff;
-
+    margin:25px 0 0;
+    padding:25px 20px;
+    background:var(--navy);
+    border-radius:25px 25px 0 0;
+    text-align:center;
+    color:#fff;
 }
 
 .footer-logo{
-
-width:120px;
-
-margin-bottom:15px;
-
+    width:105px;
+    margin-bottom:10px;
 }
 
 .footer h3{
-
-font-size:28px;
-
-font-weight:800;
-
-margin-bottom:10px;
-
+    font-size:21px;
+    margin-bottom:5px;
 }
 
 .footer p{
-
-opacity:.9;
-
-margin-bottom:6px;
-
+    font-size:13px;
+    opacity:.9;
 }
 
 .copyright{
-
-font-size:13px;
-
-opacity:.75;
-
-margin-top:18px;
-
+    margin-top:12px;
+    opacity:.65;
 }
 
 /* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
-.logo{
+    .container{
+        padding:16px 14px 0;
+    }
 
-width:250px;
+    .logo{
+        width:125px;
+    }
 
-}
+    .logo-box h1{
+        font-size:32px;
+    }
 
-.bus-image{
+    .logo-box p{
+        font-size:14px;
+    }
 
-width:330px;
+    .bus-image{
+        width:310px;
+    }
 
-}
+    .hero-card{
+        padding:25px 18px;
+    }
 
-.logo-box h1{
+    .hero-card h2{
+        font-size:31px;
+    }
 
-font-size:34px;
+    .scratch-card h2{
+        font-size:28px;
+    }
 
-}
+    .section-title{
+        font-size:19px;
+    }
 
-.hero-card h2{
+    .section-title::before,
+    .section-title::after{
+        width:35px;
+        margin:0 7px;
+    }
 
-font-size:34px;
+    .bus-number h2{
+        font-size:28px;
+    }
 
-}
+    .route-line{
+        font-size:18px;
+        gap:10px;
+    }
 
-.bus-number h2{
+    .driver-grid{
+        grid-template-columns:1fr;
+    }
 
-font-size:28px;
-
-}
-
-.driver-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.buttons{
-
-grid-template-columns:1fr;
-
-}
-
-.route-line{
-
-font-size:16px;
-
-gap:8px;
-
-}
-
-.hero-card,
-.scratch-card,
-.bus-card,
-.time-card,
-.footer{
-
-border-radius:22px;
-
-}
-
+    .buttons{
+        grid-template-columns:1fr 1fr;
+    }
 }
