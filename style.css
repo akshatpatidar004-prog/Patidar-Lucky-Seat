@@ -1,7 +1,7 @@
-/* ==========================================
-   PATIDAR TOURS & TRAVELS
-   FINAL CSS
-========================================== */
+/* ===================================================
+   PATIDAR TRAVELS
+   FINAL STYLE V1
+=================================================== */
 
 *{
 margin:0;
@@ -15,8 +15,7 @@ box-sizing:border-box;
 --orange:#F58220;
 --light:#FFF8EE;
 --white:#ffffff;
---text:#555555;
---shadow:0 12px 35px rgba(0,0,0,.08);
+--text:#666666;
 
 }
 
@@ -44,213 +43,71 @@ overflow:hidden;
 
 }
 
-.hero{
+/* ================= HEADER ================= */
 
-padding:30px 20px;
+.top-header{
+
+padding:30px 20px 10px;
 
 text-align:center;
-
-}
-/* ==========================================
-   LOGO SECTION
-========================================== */
-
-.logo-section{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
-
-margin-bottom:25px;
 
 }
 
 .logo{
 
-width:300px;
+width:290px;
 
 max-width:95%;
 
 display:block;
 
-margin:0 auto 22px;
-
-object-fit:contain;
+margin:auto;
 
 }
 
-.logo-section h1{
+.logo-box h1{
 
-font-size:46px;
+font-size:42px;
 
-font-weight:900;
+font-weight:800;
+
+margin-top:15px;
 
 letter-spacing:1px;
 
-line-height:1.08;
-
-color:#17345D;
-
-text-align:center;
-
-margin-bottom:12px;
-
 }
 
-.logo-section h1 span{
-
-color:var(--orange);
-
-}
-
-.logo-section p{
-
-margin-top:10px;
+.logo-box p{
 
 font-size:17px;
 
-font-weight:500;
-
 color:#666;
 
-text-align:center;
+margin-top:8px;
 
 }
 
-/* ==========================================
-   BUS IMAGE
-========================================== */
-
-.bus-section{
+.bus-box{
 
 display:flex;
 
 justify-content:center;
 
-align-items:center;
-
-width:100%;
-
-margin:28px auto 10px;
+margin-top:20px;
 
 }
 
-.bus{
+.bus-image{
 
-width:380px;
+width:390px;
 
-max-width:96%;
+max-width:100%;
 
-display:block;
-
-margin:auto;
-
-object-fit:contain;
-
-filter:drop-shadow(0 18px 35px rgba(0,0,0,.18));
+filter:drop-shadow(0 15px 25px rgba(0,0,0,.18));
 
 }
 
-.bus:hover{
-
-transform:scale(1.03);
-
-}
-/* ==========================================
-   HERO CARD
-========================================== */
-
-.hero-card{
-
-background:#ffffff;
-
-border-radius:28px;
-
-padding:28px 24px;
-
-margin:20px;
-
-box-shadow:var(--shadow);
-
-text-align:center;
-
-}
-
-.hero-card h2{
-
-font-size:44px;
-
-font-weight:900;
-
-line-height:1.08;
-
-margin-bottom:16px;
-
-color:#17345D;
-
-}
-
-.hero-card h2 span{
-
-display:block;
-
-color:var(--orange);
-
-}
-
-.hero-card p{
-
-font-size:16px;
-
-line-height:1.8;
-
-color:#666;
-
-margin-bottom:18px;
-
-}
-
-.features{
-
-display:flex;
-
-justify-content:center;
-
-gap:16px;
-
-flex-wrap:wrap;
-
-margin-top:10px;
-
-}
-
-.features span{
-
-font-size:15px;
-
-font-weight:700;
-
-letter-spacing:.5px;
-
-color:#17345D;
-
-}
-
-.features span::before{
-
-content:"● ";
-
-color:var(--orange);
-
-}
-
-/* ==========================
-   HERO CARD
-========================== */
+/* ================= HERO ================= */
 
 .hero-card{
 
@@ -258,27 +115,43 @@ background:#fff;
 
 margin:20px;
 
-padding:30px 22px;
+padding:28px;
 
-border-radius:28px;
+border-radius:30px;
 
-box-shadow:0 12px 35px rgba(0,0,0,.08);
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 text-align:center;
 
 }
 
+.brand-line{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:#FFF1E3;
+
+color:var(--orange);
+
+font-weight:700;
+
+border-radius:30px;
+
+margin-bottom:18px;
+
+}
+
 .hero-card h2{
 
-font-size:38px;
-
-line-height:1.15;
+font-size:42px;
 
 font-weight:800;
 
-color:#17345D;
+line-height:1.1;
 
-margin-bottom:14px;
+margin-bottom:15px;
 
 }
 
@@ -286,17 +159,15 @@ margin-bottom:14px;
 
 display:block;
 
-color:#F58220;
+color:var(--orange);
 
 }
 
 .hero-card p{
 
-font-size:16px;
+color:#666;
 
 line-height:1.7;
-
-color:#666;
 
 margin-bottom:18px;
 
@@ -316,38 +187,27 @@ flex-wrap:wrap;
 
 .features span{
 
-font-size:13px;
-
 font-weight:700;
 
-color:#17345D;
+font-size:15px;
 
 }
 
-.features span::before{
-
-content:"● ";
-
-color:#F58220;
-
-}
-/* ==========================
-   LUCKY SCRATCH CARD
-========================== */
+/* ================= LUCKY SCRATCH ================= */
 
 .scratch-card{
 
-background:linear-gradient(135deg,#FFF8EE,#FFF2D8);
+background:linear-gradient(135deg,#FFF7E8,#FFE6C4);
 
 margin:20px;
 
-padding:28px 22px;
+padding:30px 24px;
 
 border-radius:28px;
 
 text-align:center;
 
-box-shadow:0 12px 35px rgba(0,0,0,.08);
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 border:2px solid rgba(245,130,32,.18);
 
@@ -355,29 +215,25 @@ border:2px solid rgba(245,130,32,.18);
 
 .gift-icon{
 
-font-size:48px;
-
-margin-bottom:14px;
-
-}
-
-.scratch-card h2{
-
-font-size:30px;
-
-font-weight:800;
-
-color:#17345D;
+font-size:52px;
 
 margin-bottom:12px;
 
 }
 
+.scratch-card h2{
+
+font-size:32px;
+
+font-weight:800;
+
+margin-bottom:10px;
+
+}
+
 .scratch-card p{
 
-font-size:16px;
-
-line-height:1.7;
+line-height:1.8;
 
 color:#666;
 
@@ -391,9 +247,15 @@ color:#F58220;
 
 }
 
-.scratch-card a{
+.scratch-btn{
 
 display:block;
+
+width:100%;
+
+padding:18px;
+
+border-radius:50px;
 
 background:#F58220;
 
@@ -401,22 +263,416 @@ color:#fff;
 
 text-decoration:none;
 
-font-size:20px;
+font-size:18px;
 
 font-weight:700;
-
-padding:18px;
-
-border-radius:50px;
 
 transition:.3s;
 
 }
 
-.scratch-card a:hover{
+.scratch-btn:hover{
 
-background:#d96d0d;
+background:#D96E0F;
 
 transform:translateY(-2px);
+
+}
+
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+
+font-size:15px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#888;
+
+margin:25px 20px 15px;
+
+}
+
+/* ================= BUS CARD ================= */
+
+.bus-card{
+
+background:#fff;
+
+margin:0 20px 20px;
+
+padding:24px;
+
+border-radius:24px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.bus-head{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:22px;
+
+}
+
+.bus-number small{
+
+display:block;
+
+font-size:12px;
+
+color:#999;
+
+margin-bottom:5px;
+
+}
+
+.bus-number h2{
+
+font-size:34px;
+
+font-weight:800;
+
+color:#17345D;
+
+}
+
+.status{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+padding:8px 14px;
+
+background:#EAFBF0;
+
+color:#1B8A42;
+
+border-radius:30px;
+
+font-weight:700;
+
+font-size:14px;
+
+}
+
+.dot{
+
+width:10px;
+
+height:10px;
+
+background:#1B8A42;
+
+border-radius:50%;
+
+}
+
+.route-card{
+
+background:#FFF8EE;
+
+padding:18px;
+
+border-radius:18px;
+
+margin-bottom:18px;
+
+}
+
+.route-card small{
+
+display:block;
+
+font-size:12px;
+
+color:#888;
+
+margin-bottom:8px;
+
+}
+
+.route-line{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+font-size:18px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+}
+
+.route-card p{
+
+text-align:center;
+
+color:#777;
+
+}
+
+.driver-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.driver-box{
+
+background:#F9F9F9;
+
+padding:16px;
+
+border-radius:16px;
+
+}
+
+.driver-box small{
+
+display:block;
+
+font-size:12px;
+
+color:#999;
+
+margin-bottom:8px;
+
+}
+
+.driver-box h3{
+
+font-size:17px;
+
+color:#17345D;
+
+}
+
+.buttons{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:14px;
+
+margin-top:22px;
+
+}
+
+.buttons a{
+
+display:block;
+
+text-align:center;
+
+padding:16px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+font-weight:700;
+
+}
+
+.buttons a:first-child{
+
+background:#17345D;
+
+color:#fff;
+
+}
+
+.buttons a:last-child{
+
+background:#F58220;
+
+color:#fff;
+
+}
+
+/* ================= ROUTE ================= */
+
+.route-section{
+
+margin:20px;
+
+}
+
+.time-card{
+
+background:#fff;
+
+border-radius:24px;
+
+padding:22px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.time-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:14px 0;
+
+border-bottom:1px solid #eee;
+
+font-size:16px;
+
+}
+
+.time-row:last-child{
+
+border-bottom:none;
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+margin:35px 20px;
+
+padding:30px 20px;
+
+background:#17345D;
+
+border-radius:28px;
+
+text-align:center;
+
+color:#fff;
+
+}
+
+.footer-logo{
+
+width:120px;
+
+margin-bottom:15px;
+
+}
+
+.footer h3{
+
+font-size:28px;
+
+font-weight:800;
+
+margin-bottom:10px;
+
+}
+
+.footer p{
+
+opacity:.9;
+
+margin-bottom:6px;
+
+}
+
+.copyright{
+
+font-size:13px;
+
+opacity:.75;
+
+margin-top:18px;
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+.logo{
+
+width:250px;
+
+}
+
+.bus-image{
+
+width:330px;
+
+}
+
+.logo-box h1{
+
+font-size:34px;
+
+}
+
+.hero-card h2{
+
+font-size:34px;
+
+}
+
+.bus-number h2{
+
+font-size:28px;
+
+}
+
+.driver-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.buttons{
+
+grid-template-columns:1fr;
+
+}
+
+.route-line{
+
+font-size:16px;
+
+gap:8px;
+
+}
+
+.hero-card,
+.scratch-card,
+.bus-card,
+.time-card,
+.footer{
+
+border-radius:22px;
+
+}
 
 }
