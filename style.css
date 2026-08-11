@@ -473,3 +473,10 @@ body{
         grid-template-columns:1fr 1fr;
     }
 }
+.company-name {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.15;
+}
