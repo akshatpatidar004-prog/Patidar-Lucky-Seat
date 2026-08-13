@@ -201,73 +201,159 @@ Via Dhamnod • Khalghat • Kasrawad
 
 <!-- ================= ROUTE & STOPS ================= -->
 
+<!-- ROUTE & STOPS -->
 <section class="route-section">
 
-<div class="section-title">
-ROUTE &amp; STOPS
-</div>
+  <div class="route-switch">
+    <button type="button" class="route-btn active" onclick="showRoute('indore')">
+      Indore → Khargone
+    </button>
 
-<div class="time-card">
+    <button type="button" class="route-btn" onclick="showRoute('khargone')">
+      Khargone → Indore
+    </button>
+  </div>
 
-<div class="time-row">
+  <!-- INDORE TO KHARGONE -->
+  <div id="indoreRoute" class="route-list">
 
-<span>Indore</span>
+    <div class="time-row">
+      <span>Sarvate Bus Stand</span>
+      <span>--:--</span>
+    </div>
 
-<span>--:--</span>
+    <div class="time-row">
+      <span>Musakhedi</span>
+      <span>--:--</span>
+    </div>
 
-</div>
+    <div class="time-row">
+      <span>Choithram</span>
+      <span>--:--</span>
+    </div>
 
-<div class="time-row">
+    <div class="time-row">
+      <span>Rau</span>
+      <span>--:--</span>
+    </div>
 
-<span>Rau</span>
+    <div class="time-row">
+      <span>Manpur</span>
+      <span>--:--</span>
+    </div>
 
-<span>--:--</span>
+    <div class="time-row">
+      <span>Gujri</span>
+      <span>--:--</span>
+    </div>
 
-</div>
+    <div class="time-row">
+      <span>Khalghat</span>
+      <span>--:--</span>
+    </div>
 
-<div class="time-row">
+    <div class="time-row">
+      <span>Kasrawad</span>
+      <span>--:--</span>
+    </div>
 
-<span>Mhow</span>
+    <div class="time-row">
+      <span>Zohra</span>
+      <span>--:--</span>
+    </div>
 
-<span>--:--</span>
+    <div class="time-row">
+      <span>Khargone</span>
+      <span>--:--</span>
+    </div>
 
-</div>
+  </div>
 
-<div class="time-row">
 
-<span>Dhamnod</span>
+  <!-- KHARGONE TO INDORE -->
+  <div id="khargoneRoute" class="route-list" style="display:none;">
 
-<span>--:--</span>
+    <div class="time-row">
+      <span>Khargone</span>
+      <span>--:--</span>
+    </div>
 
-</div>
+    <div class="time-row">
+      <span>Zohra</span>
+      <span>--:--</span>
+    </div>
 
-<div class="time-row">
+    <div class="time-row">
+      <span>Kasrawad</span>
+      <span>--:--</span>
+    </div>
 
-<span>Khalghat</span>
+    <div class="time-row">
+      <span>Khalghat</span>
+      <span>--:--</span>
+    </div>
 
-<span>--:--</span>
+    <div class="time-row">
+      <span>Gujri</span>
+      <span>--:--</span>
+    </div>
 
-</div>
+    <div class="time-row">
+      <span>Manpur</span>
+      <span>--:--</span>
+    </div>
 
-<div class="time-row">
+    <div class="time-row">
+      <span>Rau</span>
+      <span>--:--</span>
+    </div>
 
-<span>Kasrawad</span>
+    <div class="time-row">
+      <span>Choithram</span>
+      <span>--:--</span>
+    </div>
 
-<span>--:--</span>
+    <div class="time-row">
+      <span>Musakhedi</span>
+      <span>--:--</span>
+    </div>
 
-</div>
+    <div class="time-row">
+      <span>Sarvate Bus Stand</span>
+      <span>--:--</span>
+    </div>
 
-<div class="time-row">
-
-<span>Khargone</span>
-
-<span>--:--</span>
-
-</div>
-
-</div>
+  </div>
 
 </section>
+
+<script>
+function showRoute(route) {
+
+  const indoreRoute = document.getElementById("indoreRoute");
+  const khargoneRoute = document.getElementById("khargoneRoute");
+
+  const buttons = document.querySelectorAll(".route-btn");
+
+  if (route === "indore") {
+
+    indoreRoute.style.display = "block";
+    khargoneRoute.style.display = "none";
+
+    buttons[0].classList.add("active");
+    buttons[1].classList.remove("active");
+
+  } else {
+
+    indoreRoute.style.display = "none";
+    khargoneRoute.style.display = "block";
+
+    buttons[0].classList.remove("active");
+    buttons[1].classList.add("active");
+
+  }
+}
+</script>
 
 
 <!-- ================= FOOTER ================= -->
