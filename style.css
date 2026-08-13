@@ -480,3 +480,37 @@ body{
   letter-spacing: 1px;
   line-height: 1.15;
 }
+.route-switch {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0 20px;
+}
+
+.route-btn {
+  flex: 1;
+  border: none;
+  border-radius: 18px;
+  padding: 14px 10px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.route-btn:first-child {
+  background: #173b68;
+}
+
+.route-btn:last-child {
+  background: #f58220;
+}
+
+.route-btn:hover {
+  transform: translateY(-1px);
+}
+
+.route-btn:active {
+  transform: scale(0.98);
+}
