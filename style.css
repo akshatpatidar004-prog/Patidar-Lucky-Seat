@@ -384,7 +384,7 @@ body{
 .footer{
     margin:25px 0 0;
     padding:25px 20px;
-    background:var(--navy);
+   background:linear-gradient(to bottom, #F58220 0%, #F58220 50%, var(--navy) 50%, var(--navy) 100%);
     border-radius:25px 25px 0 0;
     text-align:center;
     color:#fff;
